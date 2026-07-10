@@ -1,69 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWEETPAIN | Collection 001</title>
+<title>SWEETPAIN</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:70px 25px;
+text-align:center;
+}
+
+h1{
+font-size:70px;
+letter-spacing:10px;
+margin-bottom:15px;
+}
+
+h2{
+font-size:46px;
+margin-bottom:20px;
+}
+
+h3{
+font-size:26px;
+color:#999;
+margin-bottom:35px;
+}
+
+p{
+max-width:850px;
+font-size:20px;
+line-height:1.9;
+color:#d5d5d5;
+}
+
+img{
+width:100%;
+max-width:900px;
+margin-top:35px;
+border-radius:8px;
+}
+
+.button{
+margin-top:45px;
+padding:18px 55px;
+background:white;
+color:black;
+font-weight:bold;
+font-size:18px;
+text-decoration:none;
+transition:.3s;
+}
+
+.button:hover{
+background:#ddd;
+}
+
+.arrow{
+margin-top:70px;
+font-size:14px;
+letter-spacing:6px;
+color:#777;
+animation:float 1.6s infinite;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(10px);}
+100%{transform:translateY(0);}
+
+}
+
+.gallery{
+
+display:flex;
+flex-direction:column;
+gap:45px;
+width:100%;
+align-items:center;
+
+}
+
+.lock{
+
+font-size:90px;
+margin-bottom:25px;
+
+}
+
+footer{
+
+padding:60px;
+text-align:center;
+color:#666;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
+<section>
 
 <h1>SWEETPAIN</h1>
 
-<p class="collection">
-COLLECTION 001
-</p>
+<h3>Collection 001</h3>
 
-<p class="subtitle">
-THE PANTHEON
-</p>
+<h2>Artifact I — Quetzzal</h2>
 
-<a href="#artifact">
+<div class="arrow">
 
-<button class="enter">
-
-ENTER THE CLUB
-
-</button>
-
-</a>
+SCROLL ↓
 
 </div>
 
 </section>
 
-<!-- ARTIFACT -->
+<section>
 
-<section id="artifact" class="artifact">
+<h2>La historia</h2>
 
-<span class="chapter">
-
-ARTIFACT I
-
-</span>
-
-<h2>
-
-QUETZAL
-
-</h2>
-
-<img src="quetzalmockupjpg.png" class="mockup">
-<p class="description">
+<p>
 
 El primer Artifact representa el inicio del camino.
 
@@ -71,186 +153,67 @@ No habla de comodidad.
 
 Habla de transformación.
 
-Cada colección de SweetPain cuenta una historia.
+Cada colección de SWEETPAIN representa una historia distinta.
 
-Quetzal es el primer capítulo.
+Quetzzal simboliza el equilibrio entre la oscuridad y la creación.
+
+No es una simple playera.
+
+Es el comienzo del Club.
 
 </p>
 
 </section>
 
-<!-- STORY -->
+<section>
 
-<section class="story">
+<h2>Fotos en detalle</h2>
 
-<h2>
+<div class="gallery">
 
-THE STORY
+<img src="quetzalmockupjpg.png">
 
-</h2>
+<img src="Frente.png">
+
+<img src="Espalda.png">
+
+<img src="detalle estampado.png">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Comprar</h2>
 
 <p>
 
-Toda historia comienza con una decisión.
+Artifact I — Quetzzal
 
 <br><br>
 
-No elegimos el dolor.
+Oversize Premium
 
-Elegimos lo que hacemos después de él.
+<br>
+
+Edición Limitada
 
 <br><br>
 
-Quetzzal representa el momento donde el peso del pasado deja de ser una cadena y comienza a convertirse en alas.
+Collection 001 — THE PANTHEON
 
 </p>
+
+<a class="button" href="#">
+
+COMPRAR
+
+</a>
 
 </section>
 
-<!-- DETAILS -->
-
-<section class="details">
-
-<h2>
-
-DETAILS
-
-</h2>
-
-<div class="grid">
-
-<div>
-
-<h3>
-
-150 GSM
-
-</h3>
-
-<p>
-
-Heavy Oversize Fabric
-
-</p>
-
-</div>
-
-<div>
-
-<h3>
-
-PREMIUM DTF
-
-</h3>
-
-<p>
-
-High Definition Print
-
-</p>
-
-</div>
-
-<div>
-
-<h3>
-
-LIMITED
-
-</h3>
-
-<p>
-
-Collection 001
-
-</p>
-
-</div>
-
-<div>
-
-<h3>
-
-SWEETPAIN
-
-</h3>
-
-<p>
-
-Club Exclusive
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section class="gallery">
-
-<h2>
-
-GALLERY
-
-</h2>
-
-<div class="images">
-
-<img src="quetzalmockupjpg.png">
-
-<img src="quetzalmockupjpg.png">
-<img src="quetzalmockupjpg.png">
-
-</div>
-
-</section>
-
-<!-- PREORDER -->
-
-<section class="buy">
-
-<div class="card">
-
-<h2>
-
-ARTIFACT I
-
-</h2>
-
-<h1>
-
-QUETZAL
-
-</h1>
-
-<p class="price">
-
-$219 MXN
-
-</p>
-
-<button>
-
-GET THE ARTIFACT
-
-</button>
-
-</div>
-
-</section>
-
-<!-- LOCKED -->
-
-<section class="locked">
-
-<h2>
-
-ARTIFACT II
-
-</h2>
+<section>
 
 <div class="lock">
 
@@ -258,39 +221,25 @@ ARTIFACT II
 
 </div>
 
-<h3>
+<h2>Artifact II</h2>
 
-LOCKED
-
-</h3>
+<h3>LOCKED</h3>
 
 <p>
 
-ACCESS DENIED
+La siguiente pieza permanece oculta.
+
+Solo los miembros del Club conocerán el próximo Artifact.
 
 </p>
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
-<h2>
-
-SWEETPAIN CLUB
-
-</h2>
-
-<p>
-
-Built for those who transform pain into purpose.
-
-</p>
+SWEETPAIN CLUB © 2026
 
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 
