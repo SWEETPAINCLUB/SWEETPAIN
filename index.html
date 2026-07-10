@@ -1,148 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWEETPAIN</title>
+<title>SWEETPAIN | Collection 001</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#000;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
-overflow-x:hidden;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-h1{
-font-size:clamp(2.8rem,10vw,5rem);
-letter-spacing:8px;
-margin-bottom:20px;
-}
-
-.subtitle{
-font-size:1.2rem;
-color:#bdbdbd;
-margin-bottom:40px;
-}
-
-button{
-padding:16px 45px;
-background:#fff;
-color:#000;
-border:none;
-font-size:1rem;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-.collection{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:50px 25px;
-text-align:center;
-}
-
-.collection h2{
-font-size:2.5rem;
-margin-bottom:15px;
-letter-spacing:3px;
-}
-
-.collection h3{
-font-size:1.3rem;
-margin-bottom:30px;
-color:#bdbdbd;
-}
-
-.mockup{
-width:90%;
-max-width:450px;
-border-radius:12px;
-margin-bottom:40px;
-display:block;
-}
-
-.description{
-max-width:700px;
-line-height:1.8;
-font-size:1rem;
-color:#ddd;
-}
-
-footer{
-padding:50px 20px;
-text-align:center;
-border-top:1px solid #222;
-color:#777;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
+<!-- HERO -->
+
 <section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
 
 <h1>SWEETPAIN</h1>
 
-<p class="subtitle">
-COLLECTION 001 — THE PANTHEON
+<p class="collection">
+COLLECTION 001
 </p>
 
-<a href="#quetzal">
-<button>
+<p class="subtitle">
+THE PANTHEON
+</p>
+
+<a href="#artifact">
+
+<button class="enter">
+
 ENTER THE CLUB
+
 </button>
+
 </a>
+
+</div>
 
 </section>
 
-<section id="quetzal" class="collection">
+<!-- ARTIFACT -->
 
-<h2>ARTIFACT I</h2>
+<section id="artifact" class="artifact">
 
-<h3>QUETZAL</h3>
+<span class="chapter">
 
-<img src="quetzalmockupjpg.png"
+ARTIFACT I
 
-alt="Artifact I - Quetzal" 
+</span>
 
-class="mockup">
+<h2>
 
-<div class="description">
+QUETZAL
 
-<p>
+</h2>
+
+<img src="artifact-01-quetzal.jpg" class="mockup">
+
+<p class="description">
 
 El primer Artifact representa el inicio del camino.
 
@@ -156,15 +78,222 @@ Quetzal es el primer capítulo.
 
 </p>
 
+</section>
+
+<!-- STORY -->
+
+<section class="story">
+
+<h2>
+
+THE STORY
+
+</h2>
+
+<p>
+
+Toda historia comienza con una decisión.
+
+<br><br>
+
+No elegimos el dolor.
+
+Elegimos lo que hacemos después de él.
+
+<br><br>
+
+Quetzzal representa el momento donde el peso del pasado deja de ser una cadena y comienza a convertirse en alas.
+
+</p>
+
+</section>
+
+<!-- DETAILS -->
+
+<section class="details">
+
+<h2>
+
+DETAILS
+
+</h2>
+
+<div class="grid">
+
+<div>
+
+<h3>
+
+150 GSM
+
+</h3>
+
+<p>
+
+Heavy Oversize Fabric
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+PREMIUM DTF
+
+</h3>
+
+<p>
+
+High Definition Print
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+LIMITED
+
+</h3>
+
+<p>
+
+Collection 001
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+SWEETPAIN
+
+</h3>
+
+<p>
+
+Club Exclusive
+
+</p>
+
+</div>
+
 </div>
 
 </section>
 
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<h2>
+
+GALLERY
+
+</h2>
+
+<div class="images">
+
+<img src="artifact-01-quetzal.jpg">
+
+<img src="artifact-01-quetzal.jpg">
+
+<img src="artifact-01-quetzal.jpg">
+
+</div>
+
+</section>
+
+<!-- PREORDER -->
+
+<section class="buy">
+
+<div class="card">
+
+<h2>
+
+ARTIFACT I
+
+</h2>
+
+<h1>
+
+QUETZAL
+
+</h1>
+
+<p class="price">
+
+$219 MXN
+
+</p>
+
+<button>
+
+GET THE ARTIFACT
+
+</button>
+
+</div>
+
+</section>
+
+<!-- LOCKED -->
+
+<section class="locked">
+
+<h2>
+
+ARTIFACT II
+
+</h2>
+
+<div class="lock">
+
+🔒
+
+</div>
+
+<h3>
+
+LOCKED
+
+</h3>
+
+<p>
+
+ACCESS DENIED
+
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
 
-© 2026 SWEETPAIN CLUB
+<h2>
+
+SWEETPAIN CLUB
+
+</h2>
+
+<p>
+
+Built for those who transform pain into purpose.
+
+</p>
 
 </footer>
 
+<script src="script.js"></script>
+
 </body>
-</html>
+
+</html> 
