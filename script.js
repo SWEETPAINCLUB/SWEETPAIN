@@ -1,78 +1,68 @@
-// SWEETPAIN | SCRIPT V1
+// =======================================
+// SWEETPAIN | SCRIPT V1.0
+// =======================================
 
-// Scroll suave para los enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const destino = document.querySelector(this.getAttribute('href'));
-
-        if(destino){
-            destino.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Animación al aparecer las secciones
+// Animación al hacer scroll
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
-            entry.target.style.opacity="1";
-            entry.target.style.transform="translateY(0px)";
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0px)";
 
         }
 
     });
 
-},{
-    threshold:0.15
+}, {
+    threshold: 0.15
 });
 
-sections.forEach(section=>{
+sections.forEach(section => {
 
-    section.style.opacity="0";
-    section.style.transform="translateY(60px)";
-    section.style.transition="all .8s ease";
+    section.style.opacity = "0";
+    section.style.transform = "translateY(60px)";
+    section.style.transition = "all .8s ease";
 
     observer.observe(section);
 
 });
 
-// Cambiar el título según la pestaña
-document.addEventListener("visibilitychange",()=>{
+// =======================================
+// BOTÓN PRE-ORDER
+// =======================================
 
-    if(document.hidden){
+const preorderButton = document.getElementById("preorderButton");
+const transition = document.getElementById("transition");
 
-        document.title="Come back to SWEETPAIN";
+if(preorderButton){
 
-    }else{
-
-        document.title="SWEETPAIN";
-
-    }
-
-});
-
-// Botón Comprar
-const buyButton=document.querySelector(".button");
-
-if(buyButton){
-
-    buyButton.addEventListener("click",(e)=>{
+    preorderButton.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        alert("Pre-order disponible próximamente.");
+        transition.classList.add("show");
+
+        setTimeout(function(){
+
+            window.location.href =
+            "https://wa.me/525665897458?text=" +
+            "Hola%20SweetPain.%0A%0A" +
+            "Quiero%20unirme%20a%20la%20preventa%20del%20Artifact%20I%20%E2%80%94%20Quetzal.%0A%0A" +
+            "C%C3%B3digo:%20%0A" +
+            "Talla:%20%0A" +
+            "Nombre:";
+
+        },1800);
 
     });
 
 }
 
-console.log("SWEETPAIN Loaded");
+// =======================================
+// CAMBIAR TÍTULO DE LA PESTAÑA
+// =======================================
