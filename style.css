@@ -1212,3 +1212,38 @@ color:#bfbfbf;
 line-height:1.8;
 
 }
+/* ==========================
+BUY BUTTON
+========================== */
+
+.buy .enterButton{
+
+display:inline-block;
+
+margin-top:50px;
+
+padding:18px 45px;
+
+border:1px solid #b9973d;
+
+color:#fff;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+background:transparent;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.buy .enterButton:hover{
+
+background:#b9973d;
+
+color:#000;
+
+}
