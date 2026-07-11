@@ -90,3 +90,54 @@ document.addEventListener("visibilitychange",()=>{
     : originalTitle;
 
 });
+// =======================================
+// LIGHTBOX
+// =======================================
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImage = document.getElementById("lightboxImage");
+
+const closeLightbox = document.getElementById("closeLightbox");
+
+if(galleryImages.length){
+
+galleryImages.forEach(image=>{
+
+image.addEventListener("click",()=>{
+
+lightbox.classList.add("show");
+
+lightboxImage.src=image.src;
+
+});
+
+});
+
+}
+
+if(closeLightbox){
+
+closeLightbox.addEventListener("click",()=>{
+
+lightbox.classList.remove("show");
+
+});
+
+}
+
+if(lightbox){
+
+lightbox.addEventListener("click",(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.classList.remove("show");
+
+}
+
+});
+
+}
