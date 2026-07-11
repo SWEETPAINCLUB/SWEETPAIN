@@ -1288,3 +1288,155 @@ border:1px solid #333;
 font-size:24px;
 
 }
+/* =====================================
+PRINCE MAGIC | OFFICIAL SIGNATURE SERIES
+===================================== */
+
+.prince-page{
+
+background:
+radial-gradient(circle at top,
+#d8b84f 0%,
+#5a4300 28%,
+#151515 60%,
+#000 100%);
+
+min-height:100vh;
+
+color:#fff;
+
+}
+
+.prince-page .hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.prince-page .hero h2{
+
+font-size:64px;
+
+letter-spacing:10px;
+
+margin:20px 0;
+
+color:#ffd54d;
+
+text-shadow:
+
+0 0 12px rgba(255,215,0,.6),
+0 0 30px rgba(255,215,0,.35);
+
+}
+
+.prince-page .hero p{
+
+letter-spacing:5px;
+
+color:#d8d8d8;
+
+}
+
+.prince-page .quote{
+
+display:block;
+
+margin-top:35px;
+
+max-width:650px;
+
+line-height:1.8;
+
+font-style:italic;
+
+color:#cfcfcf;
+
+}
+
+.prince-page .artifact{
+
+text-align:center;
+
+padding:110px 30px;
+
+}
+
+.prince-page .artifact h3{
+
+letter-spacing:8px;
+
+color:#b9973d;
+
+margin-bottom:15px;
+
+}
+
+.prince-page .artifact h2{
+
+font-size:52px;
+
+letter-spacing:8px;
+
+margin-bottom:20px;
+
+}
+
+.mainMockup{
+
+width:100%;
+
+max-width:650px;
+
+margin-top:60px;
+
+transition:.4s;
+
+}
+
+.mainMockup:hover{
+
+transform:scale(1.03);
+
+}
+
+.prince-page .story{
+
+text-align:center;
+
+max-width:900px;
+
+margin:auto;
+
+padding:100px 30px;
+
+}
+
+.prince-page .story h3{
+
+letter-spacing:8px;
+
+margin-bottom:35px;
+
+color:#b9973d;
+
+}
+
+.prince-page .story p{
+
+line-height:2;
+
+color:#d0d0d0;
+
+font-size:18px
