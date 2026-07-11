@@ -8,7 +8,9 @@ window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     if (loader) {
+
         loader.classList.add("hide");
+
     }
 
     document.body.classList.add("loaded");
@@ -21,16 +23,18 @@ window.addEventListener("load", () => {
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", function(e){
 
         const target = document.querySelector(this.getAttribute("href"));
 
-        if (target) {
+        if(target){
 
             e.preventDefault();
 
             target.scrollIntoView({
-                behavior: "smooth"
+
+                behavior:"smooth"
+
             });
 
         }
@@ -43,11 +47,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 // ANIMACIÓN DE SECCIONES
 // =======================================
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry => {
+    entries.forEach(entry=>{
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
 
@@ -55,11 +59,13 @@ const observer = new IntersectionObserver((entries) => {
 
     });
 
-}, {
-    threshold: 0.15
+},{
+
+    threshold:.15
+
 });
 
-document.querySelectorAll("section").forEach(section => {
+document.querySelectorAll("section").forEach(section=>{
 
     section.classList.add("hidden");
 
@@ -71,17 +77,17 @@ document.querySelectorAll("section").forEach(section => {
 // EFECTO TARJETAS
 // =======================================
 
-document.querySelectorAll(".card,.signature,.experienceCard").forEach(card => {
+document.querySelectorAll(".card,.signature,.experienceCard,.detailCard").forEach(card=>{
 
-    card.addEventListener("mouseenter", () => {
+    card.addEventListener("mouseenter",()=>{
 
-        card.style.transform = "translateY(-10px) scale(1.02)";
+        card.style.transform="translateY(-8px)";
 
     });
 
-    card.addEventListener("mouseleave", () => {
+    card.addEventListener("mouseleave",()=>{
 
-        card.style.transform = "";
+        card.style.transform="translateY(0px)";
 
     });
 
@@ -91,13 +97,15 @@ document.querySelectorAll(".card,.signature,.experienceCard").forEach(card => {
 // CAMBIO DE TÍTULO
 // =======================================
 
-const originalTitle = document.title;
+const originalTitle=document.title;
 
-document.addEventListener("visibilitychange", () => {
+document.addEventListener("visibilitychange",()=>{
 
-    document.title = document.hidden
-        ? "Return to SWEETPAIN"
-        : originalTitle;
+    document.title=document.hidden
+
+    ? "Return to SWEETPAIN"
+
+    : originalTitle;
 
 });
 
@@ -105,27 +113,29 @@ document.addEventListener("visibilitychange", () => {
 // LIGHTBOX
 // =======================================
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const closeLightbox = document.getElementById("closeLightbox");
+const lightbox=document.getElementById("lightbox");
 
-document.querySelectorAll(".gallery-grid img").forEach(image => {
+const lightboxImage=document.getElementById("lightboxImage");
 
-    image.addEventListener("click", () => {
+const closeLightbox=document.getElementById("closeLightbox");
 
-        if (!lightbox) return;
+document.querySelectorAll(".gallery-grid img").forEach(image=>{
+
+    image.addEventListener("click",()=>{
+
+        if(!lightbox)return;
 
         lightbox.classList.add("show");
 
-        lightboxImage.src = image.src;
+        lightboxImage.src=image.src;
 
     });
 
 });
 
-if (closeLightbox) {
+if(closeLightbox){
 
-    closeLightbox.addEventListener("click", () => {
+    closeLightbox.addEventListener("click",()=>{
 
         lightbox.classList.remove("show");
 
@@ -133,11 +143,11 @@ if (closeLightbox) {
 
 }
 
-if (lightbox) {
+if(lightbox){
 
-    lightbox.addEventListener("click", e => {
+    lightbox.addEventListener("click",(e)=>{
 
-        if (e.target === lightbox) {
+        if(e.target===lightbox){
 
             lightbox.classList.remove("show");
 
@@ -148,67 +158,78 @@ if (lightbox) {
 }
 
 // =======================================
-// WHATSAPP PRE-ORDER
+// PRE-ORDER WHATSAPP
 // =======================================
 
-const preorderButton = document.getElementById("preorderButton");
+const preorderButton=document.getElementById("preorderButton");
 
-if (preorderButton) {
+if(preorderButton){
 
-    preorderButton.addEventListener("click", e => {
+    preorderButton.addEventListener("click",(e)=>{
 
         e.preventDefault();
 
-        const transition = document.getElementById("transition");
+        const transition=document.getElementById("transition");
 
-        if (transition) {
+        if(transition){
 
             transition.classList.add("show");
 
         }
 
-        const page = document.body.className;
+        let message="";
 
-        let message = "";
+        if(document.body.classList.contains("prince-page")){
 
-        if (page.includes("prince-page")) {
-
-            message = `Hola SweetPain.
+            message=
+`Hola SweetPain.
 
 Quiero realizar una pre-order de:
 
 OFFICIAL SIGNATURE SERIES
+
 PRINCE MAGIC
 
 Precio: $249 MXN
 
 Talla:
-Nombre:`;
 
-        } else {
-
-            message = `Hola SweetPain.
-
-Quiero realizar una pre-order de:
-
-COLLECTION 001
-THE PANTHEON
-
-Artifact I
-
-Talla:
 Nombre:`;
 
         }
 
-        setTimeout(() => {
+        else if(document.body.classList.contains("pantheon-page")){
 
-            window.location.href =
-                "https://wa.me/525665897458?text=" +
-                encodeURIComponent(message);
+            message=
+`Hola SweetPain.
 
-        }, 1800);
+Quiero realizar una pre-order de:
+
+COLLECTION 001
+
+THE PANTHEON
+
+Artifact I — QUETZAL
+
+Precio: $219 MXN
+
+Talla:
+
+Nombre:`;
+
+        }
+
+        setTimeout(()=>{
+
+            window.location.href=
+
+            "https://wa.me/525665897458?text="+
+
+            encodeURIComponent(message);
+
+        },1500);
 
     });
 
 }
+        
