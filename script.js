@@ -122,38 +122,3 @@ document.addEventListener("visibilitychange",()=>{
     }
 
 });
-/* =====================================
-ANIMACIONES
-===================================== */
-
-body{
-
-opacity:0;
-
-transition:opacity 1.2s ease;
-
-}
-
-body.loaded{
-
-opacity:1;
-
-}
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(70px);
-
-transition:all .8s ease;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
