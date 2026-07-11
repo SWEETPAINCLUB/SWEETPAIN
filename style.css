@@ -1860,3 +1860,74 @@ font-size:48px;
 }
 
 }
+.details{
+
+padding:120px 30px;
+
+text-align:center;
+
+}
+
+.details h3{
+
+letter-spacing:8px;
+
+color:#b9973d;
+
+margin-bottom:50px;
+
+}
+
+.detailsGrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:25px;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.detailCard{
+
+border:1px solid #333;
+
+padding:35px;
+
+transition:.35s;
+
+}
+
+.detailCard:hover{
+
+border-color:#b9973d;
+
+transform:translateY(-6px);
+
+}
+
+.detailCard span{
+
+display:block;
+
+color:#777;
+
+letter-spacing:3px;
+
+margin-bottom:12px;
+
+font-size:12px;
+
+}
+
+.detailCard p{
+
+font-size:20px;
+
+letter-spacing:2px;
+
+}
