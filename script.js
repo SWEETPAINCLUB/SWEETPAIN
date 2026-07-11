@@ -1,39 +1,28 @@
 // =======================================
-// LOADING SCREEN
+// SWEETPAIN | SCRIPT V3
 // =======================================
 
-window.addEventListener("load",()=>{
+// LOADER
+window.onload = function () {
 
-const loader=document.getElementById("loader");
+    const loader = document.getElementById("loader");
 
-setTimeout(()=>{
+    if(loader){
 
-loader.classList.add("hide");
+        loader.classList.add("hide");
 
-document.body.classList.add("loaded");
-
-},2200);
-
-});// =======================================
-// SWEETPAIN | SCRIPT V2
-// =======================================
-
-// Animación de entrada
-window.addEventListener("load", () => {
+    }
 
     document.body.classList.add("loaded");
 
-});
+};
 
-// =======================================
-// SCROLL SUAVE DEL BOTÓN
-// =======================================
-
+// BOTÓN ENTER
 const enterButton = document.querySelector(".enterButton");
 
-if (enterButton) {
+if(enterButton){
 
-    enterButton.addEventListener("click", function(e){
+    enterButton.addEventListener("click",function(e){
 
         e.preventDefault();
 
@@ -47,10 +36,7 @@ if (enterButton) {
 
 }
 
-// =======================================
-// APARICIÓN DE SECCIONES
-// =======================================
-
+// ANIMACIÓN DE SECCIONES
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver((entries)=>{
@@ -59,8 +45,6 @@ const observer = new IntersectionObserver((entries)=>{
 
         if(entry.isIntersecting){
 
-            entry.style = "";
-
             entry.target.classList.add("show");
 
         }
@@ -68,9 +52,7 @@ const observer = new IntersectionObserver((entries)=>{
     });
 
 },{
-
-    threshold:.18
-
+    threshold:0.15
 });
 
 sections.forEach(section=>{
@@ -81,13 +63,8 @@ sections.forEach(section=>{
 
 });
 
-// =======================================
-// EFECTO EN TARJETAS
-// =======================================
-
-const cards = document.querySelectorAll(".card,.signature");
-
-cards.forEach(card=>{
+// TARJETAS
+document.querySelectorAll(".card,.signature").forEach(card=>{
 
     card.addEventListener("mouseenter",()=>{
 
@@ -103,22 +80,13 @@ cards.forEach(card=>{
 
 });
 
-// =======================================
-// TÍTULO DINÁMICO
-// =======================================
-
-const originalTitle = document.title;
+// TÍTULO
+const originalTitle=document.title;
 
 document.addEventListener("visibilitychange",()=>{
 
-    if(document.hidden){
-
-        document.title="Return to SWEETPAIN";
-
-    }else{
-
-        document.title=originalTitle;
-
-    }
+    document.title=document.hidden
+    ? "Return to SWEETPAIN"
+    : originalTitle;
 
 });
