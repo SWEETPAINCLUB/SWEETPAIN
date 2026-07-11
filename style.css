@@ -1,1933 +1,2080 @@
-/* =====================================
-   SWEETPAIN | STYLE V2
-===================================== */
+/* ======================================================
+   SWEETPAIN | STYLE V3
+   PART 1
+   RESET • GLOBAL • LOADER • HERO • HOME
+====================================================== */
+
+/* ==========================
+RESET
+========================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
+    background:#000;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
 
-background:#000;
-color:#fff;
-font-family:Arial, Helvetica, sans-serif;
-
+img{
+    display:block;
+    width:100%;
 }
 
 a{
-
-text-decoration:none;
-
+    color:inherit;
+    text-decoration:none;
 }
 
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-flex-direction:column;
-
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-padding:40px;
-
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s;
 }
 
-.hero h1{
-
-font-size:60px;
-
-letter-spacing:12px;
-
-font-weight:700;
-
+.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.hero p{
-
-margin-top:20px;
-
-font-size:16px;
-
-letter-spacing:5px;
-
-color:#888;
-
-}
-
-.enterButton{
-
-display:inline-block;
-
-margin-top:50px;
-
-padding:18px 40px;
-
-border:1px solid white;
-
-color:white;
-
-background:transparent;
-
-transition:.35s;
-
-letter-spacing:3px;
-
-text-align:center;
-
-}
-
-.enterButton:hover{
-
-background:white;
-
-color:black;
-
-}
-
-/* SECCIONES */
-
-section{
-
-padding:90px 30px;
-
-}
-
-.category h3{
-
-font-size:14px;
-
-letter-spacing:6px;
-
-color:#777;
-
-margin-bottom:35px;
-
-}
-
-/* CARD PANTHEON */
-
-.card{
-
-border:1px solid #222;
-
-padding:35px;
-
-background:#050505;
-
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-border-color:white;
-
-}
-
-.small{
-
-color:#777;
-
-letter-spacing:3px;
-
-font-size:13px;
-
-}
-
-.card h2{
-
-margin-top:15px;
-
-font-size:34px;
-
-letter-spacing:4px;
-
-}
-
-.card p{
-
-margin-top:18px;
-
-color:#bdbdbd;
-
-line-height:1.7;
-
-}
-
-.card a{
-
-display:inline-block;
-
-margin-top:35px;
-
-color:white;
-
-font-weight:bold;
-
-}
-
-/* SIGNATURE */
-
-.signature{
-
-margin-top:30px;
-
-padding:35px;
-
-border-radius:16px;
-
-transition:.35s;
-
-border:1px solid #222;
-
-}
-
-.signature:hover{
-
-transform:translateY(-8px);
-
-}
-
-/* COSMICO */
-
-.cosmico{
-
-background:linear-gradient(135deg,#130017,#28003f,#4b008a);
-
-}
-
-/* ALFA */
-
-.alfa{
-
-background:linear-gradient(135deg,#001d3d,#003566,#00509d);
-
-}
-
-/* PRINCE */
-
-.prince{
-
-background:linear-gradient(135deg,#2d2100,#5d4300,#b68d00);
-
-}
-
-.signature h2{
-
-font-size:32px;
-
-letter-spacing:4px;
-
-}
-
-.signature p{
-
-margin:18px 0;
-
-color:#ededed;
-
-}
-
-.signature a{
-
-color:white;
-
-font-weight:bold;
-
-}
-
-/* LOCKED */
-
-.locked{
-
-text-align:center;
-
-}
-
-.locked h3{
-
-letter-spacing:6px;
-
-color:#666;
-
-}
-
-.locked h1{
-
-margin:20px 0;
-
-font-size:50px;
-
-letter-spacing:5px;
-
-}
-
-.locked p{
-
-font-size:24px;
-
-color:#888;
-
-}
-
-/* FOOTER */
-
-footer{
-
-padding:70px 30px;
-
-text-align:center;
-
-border-top:1px solid #181818;
-
-}
-
-footer h2{
-
-letter-spacing:8px;
-
-margin-bottom:20px;
-
-}
-
-footer p{
-
-color:#777;
-
-margin:8px 0;
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:42px;
-
-letter-spacing:8px;
-
-}
-
-.card h2{
-
-font-size:28px;
-
-}
-
-.signature h2{
-
-font-size:28px;
-
-}
-
-.locked h1{
-
-font-size:38px;
-
-}
-
-.enterButton{
-
-width:100%;
-
-text-align:center;
-
-}
-
-}
-/* =====================================
+/* ==========================
 LOADER
-===================================== */
+========================== */
 
 #loader{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    inset:0;
 
-width:100%;
-height:100%;
+    background:#000;
 
-background:#000;
+    display:flex;
 
-display:flex;
+    justify-content:center;
 
-justify-content:center;
-align-items:center;
+    align-items:center;
 
-z-index:99999;
+    z-index:99999;
 
-transition:opacity .8s ease;
+    transition:.7s;
 
 }
 
 #loader.hide{
 
-opacity:0;
-visibility:hidden;
-pointer-events:none;
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
 
 }
 
 .loader-content{
 
-text-align:center;
+    width:min(420px,90%);
 
-width:90%;
-
-max-width:450px;
+    text-align:center;
 
 }
 
 .loader-content h1{
 
-font-size:55px;
+    font-size:54px;
 
-letter-spacing:10px;
+    letter-spacing:10px;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .loader-content p{
 
-color:#888;
+    color:#8d8d8d;
 
-letter-spacing:4px;
+    letter-spacing:4px;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
 }
 
 .loader-bar{
 
-width:100%;
+    width:100%;
 
-height:3px;
+    height:3px;
 
-background:#222;
+    background:#1d1d1d;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .loader-progress{
 
-width:0%;
+    width:0;
 
-height:100%;
+    height:100%;
 
-background:white;
+    background:#fff;
 
-animation:loading 2.2s linear forwards;
+    animation:loading 2.2s linear forwards;
 
 }
 
 @keyframes loading{
 
-from{
+    from{
 
-width:0%;
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
 
 }
 
-to{
-
-width:100%;
-
-}
-
-}
 /* ==========================
-COSMICO PAGE
+HOME HERO
 ========================== */
 
-.cosmico-page{
+.hero{
 
-background:
-radial-gradient(circle at top,
-#4b0082,
-#140021 40%,
-#000 100%);
+    min-height:100vh;
 
-min-height:100vh;
+    display:flex;
 
-}
+    flex-direction:column;
 
-.cosmico-page .hero h2{
+    justify-content:center;
 
-font-size:60px;
+    align-items:center;
 
-letter-spacing:10px;
+    text-align:center;
 
-margin-top:20px;
-
-color:#b86cff;
-
-text-shadow:
-
-0 0 15px #8a2be2,
-0 0 35px #8a2be2;
+    padding:40px 20px;
 
 }
 
-.cosmico-page .signature{
+.hero h1{
 
-box-shadow:
+    font-size:64px;
 
-0 0 20px rgba(138,43,226,.35);
+    letter-spacing:12px;
+
+    margin-bottom:25px;
 
 }
+
+.hero p{
+
+    color:#8b8b8b;
+
+    letter-spacing:5px;
+
+    margin-bottom:55px;
+
+}
+
 /* ==========================
-ALFA PAGE
+BUTTON
 ========================== */
 
-.alfa-page{
+.enterButton{
 
-background:
-radial-gradient(circle at top,
-#0066ff,
-#001d3d 45%,
-#000 100%);
+    display:inline-flex;
 
-min-height:100vh;
+    justify-content:center;
 
-}
+    align-items:center;
 
-.alfa-page .hero h2{
+    min-width:260px;
 
-font-size:60px;
+    height:60px;
 
-letter-spacing:10px;
+    border:1px solid #fff;
 
-margin-top:20px;
+    letter-spacing:3px;
 
-color:#53a8ff;
+    text-transform:uppercase;
 
-text-shadow:
-0 0 15px #2196f3,
-0 0 35px #2196f3;
+    transition:.35s;
 
 }
 
-.alfa-page .signature{
+.enterButton:hover{
 
-box-shadow:
-0 0 20px rgba(33,150,243,.35);
+    background:#fff;
+
+    color:#000;
 
 }
+
 /* ==========================
-PRINCE MAGIC PAGE
+SECTIONS
 ========================== */
 
-.prince-page{
+section{
 
-background:
-radial-gradient(circle at top,
-#d4af37,
-#4b3900 45%,
-#000 100%);
-
-min-height:100vh;
+    padding:110px 8%;
 
 }
 
-.prince-page .hero h2{
+.category h3{
 
-font-size:60px;
+    letter-spacing:6px;
 
-letter-spacing:8px;
+    color:#777;
 
-margin-top:20px;
+    font-size:14px;
 
-color:#ffd95a;
-
-text-shadow:
-
-0 0 15px #ffd700,
-0 0 35px #ffd700;
+    margin-bottom:40px;
 
 }
 
-.prince-page .signature{
+/* ==========================
+ORIGINAL COLLECTION
+========================== */
 
-box-shadow:
+.card{
 
-0 0 20px rgba(255,215,0,.35);
+    background:#070707;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    padding:40px;
+
+    transition:.35s;
 
 }
-/* =====================================
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#fff;
+
+}
+
+.small{
+
+    color:#777;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+}
+
+.card h2{
+
+    margin-top:15px;
+
+    font-size:38px;
+
+    letter-spacing:5px;
+
+}
+
+.card p{
+
+    margin:20px 0 35px;
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+}
+
+.card a{
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================
+SIGNATURE SERIES
+========================== */
+
+.signature{
+
+    margin-top:30px;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    border:1px solid #222;
+
+    transition:.35s;
+
+}
+
+.signature:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.signature h2{
+
+    font-size:34px;
+
+    letter-spacing:4px;
+
+}
+
+.signature p{
+
+    margin:18px 0 30px;
+
+    color:#ececec;
+
+}
+
+.signature a{
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+CARD COLORS
+========================== */
+
+.cosmico{
+
+    background:linear-gradient(135deg,#14001e,#2b0045,#4c0b8f);
+
+}
+
+.alfa{
+
+    background:linear-gradient(135deg,#001d3d,#004a91,#0a7cff);
+
+}
+
+.prince{
+
+    background:linear-gradient(135deg,#463200,#8a6200,#d6a300);
+
+}
+
+/* ==========================
+NEXT RELEASE
+========================== */
+
+.locked{
+
+    text-align:center;
+
+}
+
+.locked h3{
+
+    letter-spacing:6px;
+
+    color:#666;
+
+}
+
+.locked h1{
+
+    margin:20px 0;
+
+    font-size:58px;
+
+    letter-spacing:6px;
+
+}
+
+.locked p{
+
+    color:#888;
+
+    font-size:26px;
+
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #1c1c1c;
+
+}
+
+footer h2{
+
+    letter-spacing:8px;
+
+    margin-bottom:18px;
+
+}
+
+footer p{
+
+    color:#777;
+
+    margin:8px 0;
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:44px;
+
+    letter-spacing:7px;
+
+}
+
+.hero p{
+
+    letter-spacing:3px;
+
+}
+
+.card h2{
+
+    font-size:30px;
+
+}
+
+.signature h2{
+
+    font-size:28px;
+
+}
+
+.locked h1{
+
+    font-size:42px;
+
+}
+
+.enterButton{
+
+    width:100%;
+
+}
+
+} 
+/* ======================================================
    THE PANTHEON
-===================================== */
+====================================================== */
 
 .pantheon-page{
 
-background:#000;
-color:#fff;
+    background:#000;
+
+    color:#fff;
 
 }
 
-/* HERO */
+/* ==========================
+HERO
+========================== */
 
 .pantheon-hero{
 
-height:100vh;
+    min-height:100vh;
 
-display:flex;
-flex-direction:column;
+    display:flex;
 
-justify-content:center;
-align-items:center;
+    flex-direction:column;
 
-text-align:center;
+    justify-content:center;
 
-padding:40px;
+    align-items:center;
 
-background:
-linear-gradient(
-180deg,
-#000 0%,
-#080808 100%
-);
+    text-align:center;
+
+    padding:40px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #000 0%,
+    #070707 100%
+    );
 
 }
 
 .pantheon-hero h1{
 
-font-size:72px;
+    font-size:72px;
 
-letter-spacing:12px;
+    letter-spacing:12px;
 
-margin-bottom:20px;
-
-color:#ffffff;
+    margin-bottom:20px;
 
 }
 
 .pantheon-hero p{
 
-letter-spacing:6px;
+    color:#b9973d;
 
-color:#b9973d;
+    letter-spacing:6px;
 
-font-size:15px;
-
-margin-bottom:40px;
+    margin-bottom:45px;
 
 }
 
 .quote{
 
-font-size:22px;
+    display:block;
 
-font-style:italic;
+    max-width:750px;
 
-line-height:1.8;
+    font-size:22px;
 
-color:#d8d8d8;
+    line-height:1.8;
 
-margin-bottom:70px;
+    color:#d5d5d5;
+
+    font-style:italic;
+
+    margin-bottom:65px;
 
 }
 
-/* ARTIFACT */
+/* ==========================
+ARTIFACT
+========================== */
 
 .artifact{
 
-text-align:center;
-
-padding:100px 30px;
+    text-align:center;
 
 }
 
 .artifact h3{
 
-letter-spacing:6px;
+    color:#b9973d;
 
-color:#b9973d;
+    letter-spacing:6px;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
 
 .artifact h2{
 
-font-size:52px;
+    font-size:56px;
 
-letter-spacing:8px;
+    letter-spacing:8px;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .artifact p{
 
-color:#a5a5a5;
+    color:#bcbcbc;
 
-margin-bottom:50px;
+    line-height:1.8;
 
-font-size:18px;
+    margin-bottom:55px;
 
 }
 
 .mainMockup{
 
-width:100%;
+    width:100%;
 
-max-width:650px;
+    max-width:650px;
 
-transition:.5s;
+    margin:auto;
+
+    transition:.4s;
 
 }
 
 .mainMockup:hover{
 
-transform:scale(1.03);
+    transform:scale(1.03);
 
 }
 
-/* STORY */
+/* ==========================
+STORY
+========================== */
 
 .story{
 
-padding:100px 40px;
+    max-width:900px;
 
-max-width:900px;
+    margin:auto;
 
-margin:auto;
-
-text-align:center;
+    text-align:center;
 
 }
 
 .story h3{
 
-letter-spacing:6px;
+    color:#b9973d;
 
-color:#b9973d;
+    letter-spacing:6px;
 
-margin-bottom:40px;
+    margin-bottom:35px;
 
 }
 
 .story p{
 
-font-size:22px;
+    color:#d0d0d0;
 
-line-height:2;
+    line-height:2;
 
-color:#d0d0d0;
+    font-size:20px;
 
 }
 
-/* GALLERY */
+/* ==========================
+GALLERY
+========================== */
 
 .gallery{
 
-padding:100px 30px;
+    text-align:center;
 
 }
 
 .gallery h3{
 
-text-align:center;
+    color:#b9973d;
 
-letter-spacing:6px;
+    letter-spacing:6px;
 
-color:#b9973d;
-
-margin-bottom:50px;
+    margin-bottom:45px;
 
 }
 
 .gallery-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:
 
-gap:25px;
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
 
 }
 
 .gallery-grid img{
 
-width:100%;
+    border-radius:16px;
 
-border-radius:14px;
+    cursor:pointer;
 
-transition:.35s;
-
-cursor:pointer;
+    transition:.35s;
 
 }
 
 .gallery-grid img:hover{
 
-transform:scale(1.04);
+    transform:scale(1.04);
 
 }
 
-/* BUY */
+/* ==========================
+BUY
+========================== */
 
 .buy{
 
-text-align:center;
-
-padding:120px 30px;
+    text-align:center;
 
 }
 
 .buy h3{
 
-letter-spacing:6px;
+    color:#b9973d;
 
-color:#b9973d;
+    letter-spacing:6px;
 
-margin-bottom:25px;
-
-}
-
-.buy h2{
-
-font-size:56px;
-
-margin-bottom:40px;
-
-}
-
-/* NEXT */
-
-.nextArtifact{
-
-padding:120px 30px;
-
-text-align:center;
-
-border-top:1px solid #222;
-
-}
-
-.nextArtifact h3{
-
-letter-spacing:8px;
-
-color:#777;
-
-}
-
-.nextArtifact h1{
-
-font-size:90px;
-
-margin:25px 0;
-
-color:#444;
-
-}
-
-.nextArtifact p{
-
-font-size:28px;
-
-letter-spacing:6px;
-
-color:#888;
-
-}
-
-/* FOOTER */
-
-.pantheon-page footer{
-
-border-top:1px solid #222;
-
-padding:80px 20px;
-
-text-align:center;
-
-}
-
-.pantheon-page footer h2{
-
-letter-spacing:10px;
-
-margin-bottom:15px;
-
-}
-
-.pantheon-page footer a{
-
-display:inline-block;
-
-margin-top:30px;
-
-color:#b9973d;
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.pantheon-hero h1{
-
-font-size:48px;
-
-letter-spacing:6px;
-
-}
-
-.quote{
-
-font-size:18px;
-
-}
-
-.artifact h2{
-
-font-size:36px;
+    margin-bottom:20px;
 
 }
 
 .buy h2{
 
-font-size:42px;
+    font-size:60px;
+
+    margin-bottom:50px;
 
 }
 
-.nextArtifact h1{
-
-font-size:60px;
-
-}
-
-}
-/* =====================================
-LIGHTBOX
-===================================== */
-
-#lightbox{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,.95);
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.35s;
-
-z-index:99999;
-
-}
-
-#lightbox.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-#lightbox img{
-
-max-width:90%;
-
-max-height:90%;
-
-border-radius:12px;
-
-box-shadow:
-
-0 0 40px rgba(255,255,255,.15);
-
-}
-
-#closeLightbox{
-
-position:absolute;
-
-top:30px;
-
-right:40px;
-
-font-size:55px;
-
-color:white;
-
-cursor:pointer;
-
-user-select:none;
-
-transition:.3s;
-
-}
-
-#closeLightbox:hover{
-
-transform:scale(1.15);
-
-}
-/* =====================================
-PRODUCT
-===================================== */
+/* ==========================
+PRODUCT INFO
+========================== */
 
 .productSpecs{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
+    grid-template-columns:
 
-repeat(auto-fit,minmax(180px,1fr));
+    repeat(auto-fit,minmax(180px,1fr));
 
-gap:20px;
+    gap:20px;
 
-margin:60px auto;
+    max-width:900px;
 
-max-width:900px;
+    margin:50px auto;
 
 }
 
 .spec{
 
-border:1px solid #333;
+    background:#090909;
 
-padding:25px;
+    border:1px solid #222;
 
-border-radius:12px;
+    border-radius:14px;
 
-background:#080808;
+    padding:28px;
 
-transition:.35s;
+    transition:.35s;
 
 }
 
 .spec:hover{
 
-border-color:#b9973d;
+    transform:translateY(-6px);
 
-transform:translateY(-6px);
+    border-color:#b9973d;
 
 }
 
 .spec span{
 
-display:block;
+    display:block;
 
-color:#777;
+    color:#777;
 
-letter-spacing:4px;
+    font-size:12px;
 
-font-size:12px;
+    letter-spacing:4px;
 
-margin-bottom:12px;
+    margin-bottom:12px;
 
 }
 
 .spec p{
 
-font-size:20px;
+    font-size:20px;
 
-letter-spacing:2px;
+    letter-spacing:2px;
 
 }
 
+/* ==========================
+SIZES
+========================== */
+
 .sizes{
 
-margin-top:70px;
+    margin-top:70px;
 
 }
 
 .sizes h4{
 
-letter-spacing:5px;
+    color:#b9973d;
 
-margin-bottom:30px;
+    letter-spacing:5px;
 
-color:#b9973d;
+    margin-bottom:30px;
 
 }
 
 .sizeGrid{
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    flex-wrap:wrap;
 
-gap:20px;
+    gap:18px;
 
-flex-wrap:wrap;
-
-margin-bottom:40px;
+    margin-bottom:45px;
 
 }
 
 .sizeGrid span{
 
-width:65px;
+    width:70px;
 
-height:65px;
+    height:70px;
 
-border:1px solid #555;
+    display:flex;
 
-display:flex;
+    justify-content:center;
 
-justify-content:center;
+    align-items:center;
 
-align-items:center;
+    border:1px solid #444;
 
-font-size:22px;
+    transition:.35s;
 
-transition:.35s;
-
-cursor:pointer;
+    cursor:pointer;
 
 }
 
 .sizeGrid span:hover{
 
-background:#b9973d;
+    background:#b9973d;
 
-color:black;
-
-border-color:#b9973d;
-
-transform:scale(1.08);
+    color:#000;
 
 }
-/* =====================================
-THE EXPERIENCE
-===================================== */
+
+/* ==========================
+MADE ON DEMAND
+========================== */
+
+.madeOnDemand{
+
+    margin-top:35px;
+
+    color:#9f9f9f;
+
+    letter-spacing:2px;
+
+    line-height:2;
+
+}
+
+/* ==========================
+EXPERIENCE
+========================== */
 
 .experience{
 
-padding:120px 30px;
-
-text-align:center;
+    text-align:center;
 
 }
 
 .experience h3{
 
-letter-spacing:8px;
+    color:#b9973d;
 
-color:#b9973d;
+    letter-spacing:8px;
 
-margin-bottom:60px;
+    margin-bottom:55px;
 
 }
 
 .experienceGrid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
+    grid-template-columns:
 
-repeat(auto-fit,minmax(240px,1fr));
+    repeat(auto-fit,minmax(240px,1fr));
 
-gap:30px;
-
-max-width:1200px;
-
-margin:auto;
+    gap:25px;
 
 }
 
 .experienceCard{
 
-background:#080808;
+    background:#090909;
 
-border:1px solid #222;
+    border:1px solid #222;
 
-padding:40px 25px;
+    border-radius:16px;
 
-border-radius:16px;
+    padding:40px 25px;
 
-transition:.35s;
+    transition:.35s;
 
 }
 
 .experienceCard:hover{
 
-transform:translateY(-10px);
+    transform:translateY(-8px);
 
-border-color:#b9973d;
-
-box-shadow:0 0 25px rgba(185,151,61,.25);
+    border-color:#b9973d;
 
 }
 
 .experienceCard h2{
 
-font-size:42px;
+    font-size:42px;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .experienceCard h4{
 
-letter-spacing:3px;
+    margin-bottom:18px;
 
-margin-bottom:20px;
-
-font-size:18px;
+    letter-spacing:3px;
 
 }
 
 .experienceCard p{
 
-color:#bfbfbf;
+    color:#cfcfcf;
 
-line-height:1.8;
+    line-height:1.8;
 
 }
+
 /* ==========================
-BUY BUTTON
+NEXT ARTIFACT
 ========================== */
 
-.buy .enterButton{
+.nextArtifact{
 
-display:flex;
+    text-align:center;
 
-justify-content:center;
-align-items:center;
-
-width:280px;
-height:60px;
-
-margin:50px auto 0;
-
-border:1px solid #b9973d;
-
-background:transparent;
-
-color:#fff;
-
-letter-spacing:3px;
-
-text-transform:uppercase;
-
-white-space:nowrap;
-
-transition:.35s;
+    border-top:1px solid #222;
 
 }
 
-.buy .enterButton:hover{
+.nextArtifact h3{
 
-background:#b9973d;
+    color:#777;
 
-color:#000;
-
-}
-.sizes{
-
-margin:60px 0;
+    letter-spacing:8px;
 
 }
 
-.sizeGrid{
+.nextArtifact h1{
 
-display:grid;
+    font-size:90px;
 
-grid-template-columns:repeat(4,80px);
+    color:#444;
 
-justify-content:center;
-
-gap:20px;
-
-margin-top:25px;
-
-margin-bottom:50px;
+    margin:25px 0;
 
 }
 
-.sizeGrid span{
+.nextArtifact p{
 
-display:flex;
+    color:#888;
 
-justify-content:center;
+    letter-spacing:5px;
 
-align-items:center;
-
-height:80px;
-
-border:1px solid #333;
-
-font-size:24px;
-
-}
-/* =====================================
-PRINCE MAGIC | OFFICIAL SIGNATURE SERIES
-===================================== */
-
-.prince-page{
-
-background:
-radial-gradient(circle at top,
-#d8b84f 0%,
-#5a4300 28%,
-#151515 60%,
-#000 100%);
-
-min-height:100vh;
-
-color:#fff;
+    font-size:28px;
 
 }
 
-.prince-page .hero{
+/* ==========================
+PANTHEON FOOTER
+========================== */
 
-min-height:100vh;
+.pantheon-page footer{
 
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-padding:40px;
+    border-top:1px solid #222;
 
 }
 
-.prince-page .hero h2{
+/* ==========================
+RESPONSIVE
+========================== */
 
-font-size:64px;
+@media(max-width:768px){
 
-letter-spacing:10px;
+.pantheon-hero h1{
 
-margin:20px 0;
+    font-size:48px;
 
-color:#ffd54d;
-
-text-shadow:
-
-0 0 12px rgba(255,215,0,.6),
-0 0 30px rgba(255,215,0,.35);
+    letter-spacing:7px;
 
 }
 
-.prince-page .hero p{
+.quote{
 
-letter-spacing:5px;
-
-color:#d8d8d8;
+    font-size:18px;
 
 }
 
-.prince-page .quote{
+.artifact h2{
 
-display:block;
-
-margin-top:35px;
-
-max-width:650px;
-
-line-height:1.8;
-
-font-style:italic;
-
-color:#cfcfcf;
+    font-size:40px;
 
 }
 
-.prince-page .artifact{
+.buy h2{
 
-text-align:center;
-
-padding:110px 30px;
+    font-size:44px;
 
 }
 
-.prince-page .artifact h3{
+.nextArtifact h1{
 
-letter-spacing:8px;
-
-color:#b9973d;
-
-margin-bottom:15px;
+    font-size:62px;
 
 }
 
-.prince-page .artifact h2{
+}
 
-font-size:52px;
+ /* ======================================================
+   OFFICIAL SIGNATURE SERIES
+   (Base para todos los colaboradores)
+====================================================== */
 
-letter-spacing:8px;
+.signature-page{
 
-margin-bottom:20px;
+    background:#000;
+
+    color:#fff;
+
+    min-height:100vh;
 
 }
 
-.mainMockup{
+/* ==========================
+HERO
+========================== */
 
-width:100%;
+.signatureHero{
 
-max-width:650px;
+    min-height:100vh;
 
-margin-top:60px;
+    display:flex;
 
-transition:.4s;
+    justify-content:center;
 
-}
+    align-items:center;
 
-.mainMockup:hover{
+    text-align:center;
 
-transform:scale(1.03);
+    padding:40px;
 
-}
+    position:relative;
 
-.prince-page .story{
-
-text-align:center;
-
-max-width:900px;
-
-margin:auto;
-
-padding:100px 30px;
-
-}
-
-.prince-page .story h3{
-
-letter-spacing:8px;
-
-margin-bottom:35px;
-
-color:#b9973d;
-
-}
-
-.prince-page .story p{
-
-line-height:2;
-
-color:#d0d0d0;
-
-font-size:18px
-/* =====================================
-PRINCE MAGIC V2
-===================================== */
-
-.prince-page{
-
-background:
-radial-gradient(circle at top,#5c4300,#1b1400 45%,#000 100%);
-
-color:#fff;
-
-}
-
-/* HERO */
-
-.princeHero{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:40px;
-
-position:relative;
-
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .heroOverlay{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-background:
-
-radial-gradient(circle,#ffd54a22,transparent 70%);
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.06),
+    transparent 70%);
 
 }
 
 .heroContent{
 
-position:relative;
+    position:relative;
 
-z-index:2;
+    z-index:2;
 
-max-width:900px;
+    max-width:900px;
 
 }
 
 .seriesTitle{
 
-letter-spacing:8px;
+    letter-spacing:8px;
 
-color:#d4af37;
+    font-size:14px;
 
-font-size:14px;
+    color:#999;
 
-margin-bottom:25px;
-
-}
-
-.princeHero h1{
-
-font-size:72px;
-
-letter-spacing:10px;
-
-margin-bottom:20px;
-
-text-shadow:
-
-0 0 20px rgba(255,215,0,.45);
+    margin-bottom:25px;
 
 }
 
-.princeHero h3{
+.signatureHero h1{
 
-font-size:28px;
+    font-size:72px;
 
-letter-spacing:6px;
+    letter-spacing:10px;
 
-margin-bottom:35px;
+    margin-bottom:20px;
 
-color:#ffd95a;
+}
+
+.signatureHero h3{
+
+    font-size:28px;
+
+    letter-spacing:6px;
+
+    margin-bottom:35px;
 
 }
 
 .heroDescription{
 
-max-width:700px;
+    max-width:700px;
 
-margin:auto;
+    margin:auto;
 
-line-height:1.9;
+    line-height:1.9;
 
-color:#d7d7d7;
+    color:#d0d0d0;
 
 }
 
-/* PRODUCT */
+/* ==========================
+PRODUCT
+========================== */
 
 .signatureProduct{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-gap:70px;
+    gap:70px;
 
-align-items:center;
+    align-items:center;
 
-padding:120px 8%;
+    padding:120px 8%;
 
 }
 
 .productImage img{
 
-width:100%;
+    width:100%;
 
-border-radius:18px;
+    border-radius:18px;
 
-transition:.4s;
+    transition:.4s;
 
 }
 
 .productImage img:hover{
 
-transform:scale(1.03);
+    transform:scale(1.03);
 
 }
 
 .collectionNumber{
 
-letter-spacing:6px;
+    color:#999;
 
-color:#d4af37;
+    letter-spacing:6px;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
 
 .productInfo h2{
 
-font-size:52px;
+    font-size:52px;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .officialText{
 
-letter-spacing:4px;
+    color:#888;
 
-color:#999;
+    letter-spacing:4px;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .productDescription{
 
-line-height:2;
+    line-height:2;
 
-color:#d2d2d2;
-
-}
-
-/* STORY */
-
-.story{
-
-max-width:900px;
-
-margin:auto;
-
-text-align:center;
+    color:#d0d0d0;
 
 }
 
-.story h3{
+/* ==========================
+DETAILS
+========================== */
 
-letter-spacing:8px;
-
-color:#d4af37;
-
-margin-bottom:35px;
-
-}
-
-.story p{
-
-line-height:2;
-
-color:#d0d0d0;
-
-}
-
-/* GALLERY */
-
-.gallery{
-
-padding:120px 8%;
-
-text-align:center;
-
-}
-
-.gallery h3{
-
-letter-spacing:8px;
-
-color:#d4af37;
-
-margin-bottom:15px;
-
-}
-
-.gallerySubtitle{
-
-color:#888;
-
-margin-bottom:45px;
-
-}
-
-.galleryItem{
-
-text-align:center;
-
-}
-
-.galleryItem p{
-
-margin-top:18px;
-
-letter-spacing:3px;
-
-color:#999;
-
-font-size:13px;
-
-}
-
-/* BUY */
-
-.buy{
-
-text-align:center;
-
-padding:120px 30px;
-
-}
-
-.seriesBadge{
-
-letter-spacing:6px;
-
-color:#d4af37;
-
-margin-bottom:20px;
-
-}
-
-.buy h2{
-
-font-size:65px;
-
-margin-bottom:20px;
-
-}
-
-.buyDescription{
-
-color:#cfcfcf;
-
-max-width:650px;
-
-margin:auto;
-
-line-height:1.8;
-
-margin-bottom:45px;
-
-}
-
-.productSpecs{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:20px;
-
-max-width:700px;
-
-margin:40px auto;
-
-}
-
-.spec{
-
-border:1px solid #333;
-
-padding:25px;
-
-border-radius:12px;
-
-}
-
-.spec span{
-
-color:#d4af37;
-
-letter-spacing:4px;
-
-font-size:12px;
-
-}
-
-.spec p{
-
-margin-top:12px;
-
-font-size:18px;
-
-}
-
-.sizeGrid{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-margin:35px 0;
-
-flex-wrap:wrap;
-
-}
-
-.sizeGrid span{
-
-width:75px;
-
-height:75px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-border:1px solid #555;
-
-transition:.3s;
-
-}
-
-.sizeGrid span:hover{
-
-background:#d4af37;
-
-color:#000;
-
-border-color:#d4af37;
-
-}
-
-.madeOnDemand{
-
-margin-top:30px;
-
-letter-spacing:3px;
-
-color:#999;
-
-line-height:2;
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.signatureProduct{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.princeHero h1{
-
-font-size:48px;
-
-}
-
-.productInfo h2{
-
-font-size:38px;
-
-}
-
-.buy h2{
-
-font-size:48px;
-
-}
-
-}
 .details{
 
-padding:120px 30px;
+    padding:120px 30px;
 
-text-align:center;
+    text-align:center;
 
 }
 
 .details h3{
 
-letter-spacing:8px;
+    letter-spacing:8px;
 
-color:#b9973d;
-
-margin-bottom:50px;
+    margin-bottom:50px;
 
 }
 
 .detailsGrid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
 
-gap:25px;
+    gap:25px;
 
-max-width:900px;
+    max-width:900px;
 
-margin:auto;
+    margin:auto;
 
 }
 
 .detailCard{
 
-border:1px solid #333;
+    background:#090909;
 
-padding:35px;
+    border:1px solid #222;
 
-transition:.35s;
+    border-radius:16px;
+
+    padding:35px;
+
+    transition:.35s;
 
 }
 
 .detailCard:hover{
 
-border-color:#b9973d;
-
-transform:translateY(-6px);
+    transform:translateY(-8px);
 
 }
 
 .detailCard span{
 
-display:block;
+    display:block;
 
-color:#777;
+    color:#777;
 
-letter-spacing:3px;
+    letter-spacing:3px;
 
-margin-bottom:12px;
+    margin-bottom:12px;
 
-font-size:12px;
+    font-size:12px;
 
 }
 
 .detailCard p{
 
-font-size:20px;
-
-letter-spacing:2px;
+    font-size:20px;
 
 }
+
+/* ==========================
+PRINCE MAGIC
+========================== */
+
+.prince-page{
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #d4af37,
+
+    #4f3900 40%,
+
+    #000 100%);
+
+}
+
+.prince-page .seriesTitle,
+
+.prince-page .collectionNumber,
+
+.prince-page .details h3{
+
+    color:#d4af37;
+
+}
+
+.prince-page h1{
+
+    color:#ffd95a;
+
+    text-shadow:
+
+    0 0 15px rgba(255,215,0,.5),
+
+    0 0 35px rgba(255,215,0,.25);
+
+}
+
+/* ==========================
+COSMICO
+========================== */
+
+.cosmico-page{
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #5b0db5,
+
+    #160026 40%,
+
+    #000 100%);
+
+}
+
+.cosmico-page .seriesTitle,
+
+.cosmico-page .collectionNumber,
+
+.cosmico-page .details h3{
+
+    color:#8a5cff;
+
+}
+
+.cosmico-page h1{
+
+    color:#bf9dff;
+
+}
+
+/* ==========================
+ALFA
+========================== */
+
+.alfa-page{
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #005eff,
+
+    #001f52 45%,
+
+    #000 100%);
+
+}
+
+.alfa-page .seriesTitle,
+
+.alfa-page .collectionNumber,
+
+.alfa-page .details h3{
+
+    color:#53a8ff;
+
+}
+
+.alfa-page h1{
+
+    color:#7bc3ff;
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.signatureProduct{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.signatureHero h1{
+
+    font-size:48px;
+
+}
+
+.signatureHero h3{
+
+    font-size:22px;
+
+}
+
+.productInfo h2{
+
+    font-size:38px;
+
+}
+
+}
+/* ======================================================
+   PART 4
+   GALLERY • LIGHTBOX • BUY • EXPERIENCE • FINAL
+====================================================== */
+
+/* ==========================
+GALLERY
+========================== */
+
+.gallery{
+
+    padding:120px 8%;
+
+    text-align:center;
+
+}
+
+.gallery h3{
+
+    font-size:15px;
+
+    letter-spacing:8px;
+
+    color:#888;
+
+    margin-bottom:20px;
+
+}
+
+.gallerySubtitle{
+
+    color:#c2c2c2;
+
+    margin-bottom:55px;
+
+    letter-spacing:2px;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:28px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ==========================
+LIGHTBOX
+========================== */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+#lightbox.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:18px;
+
+}
+
+#closeLightbox{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    font-size:55px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+/* ==========================
+BUY
+========================== */
+
+.buy{
+
+    padding:140px 30px;
+
+    text-align:center;
+
+}
+
+.seriesBadge{
+
+    letter-spacing:8px;
+
+    color:#999;
+
+    margin-bottom:20px;
+
+}
+
+.buy h2{
+
+    font-size:62px;
+
+    margin-bottom:20px;
+
+}
+
+.buyDescription{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#cfcfcf;
+
+    line-height:2;
+
+    margin-bottom:55px;
+
+}
+
+.buy .enterButton{
+
+    width:300px;
+
+    height:62px;
+
+    margin:auto;
+
+}
+
+.madeOnDemand{
+
+    margin-top:45px;
+
+    color:#888;
+
+    letter-spacing:3px;
+
+    line-height:2;
+
+    font-size:14px;
+
+}
+
+/* ==========================
+EXPERIENCE
+========================== */
+
+.experience{
+
+    padding:130px 8%;
+
+    text-align:center;
+
+}
+
+.experience h3{
+
+    letter-spacing:8px;
+
+    color:#999;
+
+    margin-bottom:60px;
+
+}
+
+.experienceGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.experienceCard{
+
+    background:#080808;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    padding:45px 30px;
+
+    transition:.35s;
+
+}
+
+.experienceCard:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.experienceCard h2{
+
+    font-size:46px;
+
+    margin-bottom:20px;
+
+}
+
+.experienceCard h4{
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+}
+
+.experienceCard p{
+
+    color:#cfcfcf;
+
+    line-height:1.9;
+
+}
+
+/* ==========================
+TRANSITION
+========================== */
+
+#transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.45s;
+
+    z-index:99998;
+
+}
+
+#transition.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#transition h1{
+
+    letter-spacing:12px;
+
+    font-size:38px;
+
+}
+
+/* ==========================
+ANIMATIONS
+========================== */
+
+.fadeUp{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+.fadeUp.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:.8s;
+
+}
+
+/* ==========================
+GLOBAL RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.gallery{
+
+    padding:90px 25px;
+
+}
+
+.buy h2{
+
+    font-size:42px;
+
+}
+
+.buy .enterButton{
+
+    width:100%;
+
+}
+
+.experience{
+
+    padding:90px 25px;
+
+}
+
+#transition h1{
+
+    font-size:28px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.gallery-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.experienceGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.detailsGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.productSpecs{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero h1,
+
+.signatureHero h1,
+
+.pantheon-hero h1{
+
+    font-size:38px;
+
+    letter-spacing:5px;
+
+}
+
+.buy h2{
+
+    font-size:34px;
+
+}
+
+}
+/* ======================================================
+   SWEETPAIN | STYLE V3
+   PART 5
+   FINAL POLISH
+====================================================== */
+
+/* ==========================
+SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#050505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2b2b2b;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#666;
+
+}
+
+/* ==========================
+TEXT SELECTION
+========================== */
+
+::selection{
+
+    background:#d4af37;
+
+    color:#000;
+
+}
+
+/* ==========================
+SMOOTH IMAGES
+========================== */
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ==========================
+LINKS
+========================== */
+
+a{
+
+    transition:.3s ease;
+
+}
+
+a:hover{
+
+    opacity:.92;
+
+}
+
+/* ==========================
+BUTTON POLISH
+========================== */
+
+.enterButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.enterButton::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.enterButton:hover::after{
+
+    left:120%;
+
+}
+
+/* ==========================
+CARDS
+========================== */
+
+.card,
+.signature,
+.detailCard,
+.spec,
+.experienceCard{
+
+    transition:
+    transform .35s,
+    border-color .35s,
+    box-shadow .35s;
+
+}
+
+.card:hover,
+.signature:hover,
+.detailCard:hover,
+.spec:hover,
+.experienceCard:hover{
+
+    box-shadow:
+
+    0 10px 35px rgba(255,255,255,.08);
+
+}
+
+/* ==========================
+IMAGES
+========================== */
+
+.mainMockup,
+.gallery-grid img{
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.45);
+
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+    background:#020202;
+
+}
+
+/* ==========================
+FADE
+========================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:.8s ease;
+
+}
+
+/* ==========================
+PERFORMANCE
+========================== */
+
+.card,
+.signature,
+.mainMockup,
+.gallery-grid img,
+.detailCard,
+.spec,
+.experienceCard{
+
+    will-change:transform;
+
+}
+
+/* ==========================
+END OF FILE
+========================== */
