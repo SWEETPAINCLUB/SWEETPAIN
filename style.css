@@ -486,3 +486,41 @@ box-shadow:
 0 0 20px rgba(138,43,226,.35);
 
 }
+/* ==========================
+ALFA PAGE
+========================== */
+
+.alfa-page{
+
+background:
+radial-gradient(circle at top,
+#0066ff,
+#001d3d 45%,
+#000 100%);
+
+min-height:100vh;
+
+}
+
+.alfa-page .hero h2{
+
+font-size:60px;
+
+letter-spacing:10px;
+
+margin-top:20px;
+
+color:#53a8ff;
+
+text-shadow:
+0 0 15px #2196f3,
+0 0 35px #2196f3;
+
+}
+
+.alfa-page .signature{
+
+box-shadow:
+0 0 20px rgba(33,150,243,.35);
+
+}
