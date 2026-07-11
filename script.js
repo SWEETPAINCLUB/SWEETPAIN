@@ -183,3 +183,100 @@ Nombre:`;
     });
 
 }
+// =======================================
+// PRINCE MAGIC | WHATSAPP
+// =======================================
+
+const preorderButton = document.getElementById("preorderButton");
+
+if(preorderButton){
+
+preorderButton.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const transition=document.getElementById("transition");
+
+if(transition){
+
+transition.classList.add("show");
+
+}
+
+setTimeout(function(){
+
+window.location.href=
+
+"https://wa.me/525665897458?text=" +
+
+"Hola%20SweetPain.%0A%0A"+
+
+"Quiero%20unirme%20a%20la%20pre-order%20de:%0A%0A"+
+
+"OFFICIAL%20SIGNATURE%20SERIES%0A"+
+
+"PRINCE%20MAGIC%0A%0A"+
+
+"Precio:%20$249%20MXN%0A"+
+
+"Talla:%20%0A"+
+
+"Nombre:%20";
+
+},1800);
+
+});
+
+}
+
+// =======================================
+// LIGHTBOX
+// =======================================
+
+const galleryImages=document.querySelectorAll(".gallery-grid img");
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImage=document.getElementById("lightboxImage");
+
+const closeLightbox=document.getElementById("closeLightbox");
+
+if(galleryImages.length){
+
+galleryImages.forEach(image=>{
+
+image.addEventListener("click",()=>{
+
+lightbox.classList.add("show");
+
+lightboxImage.src=image.src;
+
+});
+
+});
+
+}
+
+if(closeLightbox){
+
+closeLightbox.addEventListener("click",()=>{
+
+lightbox.classList.remove("show");
+
+});
+
+}
+
+if(lightbox){
+
+lightbox.addEventListener("click",(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.classList.remove("show");
+
+}
+
+});
+
+}
