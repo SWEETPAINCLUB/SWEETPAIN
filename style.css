@@ -65,7 +65,9 @@ color:#888;
 
 .enterButton{
 
-margin-top:70px;
+display:inline-block;
+
+margin-top:50px;
 
 padding:18px 40px;
 
@@ -73,9 +75,13 @@ border:1px solid white;
 
 color:white;
 
+background:transparent;
+
 transition:.35s;
 
 letter-spacing:3px;
+
+text-align:center;
 
 }
 
@@ -1076,9 +1082,13 @@ display:flex;
 
 justify-content:center;
 
+align-items:center;
+
 gap:20px;
 
 flex-wrap:wrap;
+
+margin-bottom:40px;
 
 }
 
