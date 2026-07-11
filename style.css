@@ -446,3 +446,43 @@ width:100%;
 }
 
 }
+/* ==========================
+COSMICO PAGE
+========================== */
+
+.cosmico-page{
+
+background:
+radial-gradient(circle at top,
+#4b0082,
+#140021 40%,
+#000 100%);
+
+min-height:100vh;
+
+}
+
+.cosmico-page .hero h2{
+
+font-size:60px;
+
+letter-spacing:10px;
+
+margin-top:20px;
+
+color:#b86cff;
+
+text-shadow:
+
+0 0 15px #8a2be2,
+0 0 35px #8a2be2;
+
+}
+
+.cosmico-page .signature{
+
+box-shadow:
+
+0 0 20px rgba(138,43,226,.35);
+
+}
