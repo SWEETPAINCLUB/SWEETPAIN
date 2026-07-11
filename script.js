@@ -141,3 +141,45 @@ lightbox.classList.remove("show");
 });
 
 }
+// =======================================
+// THE PANTHEON | WHATSAPP PRE-ORDER
+// =======================================
+
+const preorderButton = document.getElementById("preorderButton");
+const transition = document.getElementById("transition");
+
+if (preorderButton) {
+
+    preorderButton.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        if (transition) {
+            transition.classList.add("show");
+        }
+
+        setTimeout(function(){
+
+            const mensaje =
+`Hola SweetPain.
+
+Quiero unirme a la preventa de:
+
+Collection 001 — THE PANTHEON
+
+Producto:
+Artifact I — Quetzal
+
+Código:
+Talla:
+Nombre:`;
+
+            window.location.href =
+            "https://wa.me/525665897458?text=" +
+            encodeURIComponent(mensaje);
+
+        },1800);
+
+    });
+
+}
