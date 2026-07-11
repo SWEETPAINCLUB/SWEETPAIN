@@ -372,7 +372,7 @@ transition:opacity .8s ease;
 #loader.hide{
 
 opacity:0;
-
+visibility:hidden;
 pointer-events:none;
 
 }
