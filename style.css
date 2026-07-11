@@ -1115,3 +1115,90 @@ border-color:#b9973d;
 transform:scale(1.08);
 
 }
+/* =====================================
+THE EXPERIENCE
+===================================== */
+
+.experience{
+
+padding:120px 30px;
+
+text-align:center;
+
+}
+
+.experience h3{
+
+letter-spacing:8px;
+
+color:#b9973d;
+
+margin-bottom:60px;
+
+}
+
+.experienceGrid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.experienceCard{
+
+background:#080808;
+
+border:1px solid #222;
+
+padding:40px 25px;
+
+border-radius:16px;
+
+transition:.35s;
+
+}
+
+.experienceCard:hover{
+
+transform:translateY(-10px);
+
+border-color:#b9973d;
+
+box-shadow:0 0 25px rgba(185,151,61,.25);
+
+}
+
+.experienceCard h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.experienceCard h4{
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+
+font-size:18px;
+
+}
+
+.experienceCard p{
+
+color:#bfbfbf;
+
+line-height:1.8;
+
+}
