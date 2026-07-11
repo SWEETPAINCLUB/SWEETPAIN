@@ -564,3 +564,351 @@ box-shadow:
 0 0 20px rgba(255,215,0,.35);
 
 }
+/* =====================================
+   THE PANTHEON
+===================================== */
+
+.pantheon-page{
+
+background:#000;
+color:#fff;
+
+}
+
+/* HERO */
+
+.pantheon-hero{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+background:
+linear-gradient(
+180deg,
+#000 0%,
+#080808 100%
+);
+
+}
+
+.pantheon-hero h1{
+
+font-size:72px;
+
+letter-spacing:12px;
+
+margin-bottom:20px;
+
+color:#ffffff;
+
+}
+
+.pantheon-hero p{
+
+letter-spacing:6px;
+
+color:#b9973d;
+
+font-size:15px;
+
+margin-bottom:40px;
+
+}
+
+.quote{
+
+font-size:22px;
+
+font-style:italic;
+
+line-height:1.8;
+
+color:#d8d8d8;
+
+margin-bottom:70px;
+
+}
+
+/* ARTIFACT */
+
+.artifact{
+
+text-align:center;
+
+padding:100px 30px;
+
+}
+
+.artifact h3{
+
+letter-spacing:6px;
+
+color:#b9973d;
+
+margin-bottom:15px;
+
+}
+
+.artifact h2{
+
+font-size:52px;
+
+letter-spacing:8px;
+
+margin-bottom:20px;
+
+}
+
+.artifact p{
+
+color:#a5a5a5;
+
+margin-bottom:50px;
+
+font-size:18px;
+
+}
+
+.mainMockup{
+
+width:100%;
+
+max-width:650px;
+
+transition:.5s;
+
+}
+
+.mainMockup:hover{
+
+transform:scale(1.03);
+
+}
+
+/* STORY */
+
+.story{
+
+padding:100px 40px;
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.story h3{
+
+letter-spacing:6px;
+
+color:#b9973d;
+
+margin-bottom:40px;
+
+}
+
+.story p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#d0d0d0;
+
+}
+
+/* GALLERY */
+
+.gallery{
+
+padding:100px 30px;
+
+}
+
+.gallery h3{
+
+text-align:center;
+
+letter-spacing:6px;
+
+color:#b9973d;
+
+margin-bottom:50px;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.gallery-grid img{
+
+width:100%;
+
+border-radius:14px;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.04);
+
+}
+
+/* BUY */
+
+.buy{
+
+text-align:center;
+
+padding:120px 30px;
+
+}
+
+.buy h3{
+
+letter-spacing:6px;
+
+color:#b9973d;
+
+margin-bottom:25px;
+
+}
+
+.buy h2{
+
+font-size:56px;
+
+margin-bottom:40px;
+
+}
+
+/* NEXT */
+
+.nextArtifact{
+
+padding:120px 30px;
+
+text-align:center;
+
+border-top:1px solid #222;
+
+}
+
+.nextArtifact h3{
+
+letter-spacing:8px;
+
+color:#777;
+
+}
+
+.nextArtifact h1{
+
+font-size:90px;
+
+margin:25px 0;
+
+color:#444;
+
+}
+
+.nextArtifact p{
+
+font-size:28px;
+
+letter-spacing:6px;
+
+color:#888;
+
+}
+
+/* FOOTER */
+
+.pantheon-page footer{
+
+border-top:1px solid #222;
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+.pantheon-page footer h2{
+
+letter-spacing:10px;
+
+margin-bottom:15px;
+
+}
+
+.pantheon-page footer a{
+
+display:inline-block;
+
+margin-top:30px;
+
+color:#b9973d;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.pantheon-hero h1{
+
+font-size:48px;
+
+letter-spacing:6px;
+
+}
+
+.quote{
+
+font-size:18px;
+
+}
+
+.artifact h2{
+
+font-size:36px;
+
+}
+
+.buy h2{
+
+font-size:42px;
+
+}
+
+.nextArtifact h1{
+
+font-size:60px;
+
+}
+
+}
