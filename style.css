@@ -524,3 +524,43 @@ box-shadow:
 0 0 20px rgba(33,150,243,.35);
 
 }
+/* ==========================
+PRINCE MAGIC PAGE
+========================== */
+
+.prince-page{
+
+background:
+radial-gradient(circle at top,
+#d4af37,
+#4b3900 45%,
+#000 100%);
+
+min-height:100vh;
+
+}
+
+.prince-page .hero h2{
+
+font-size:60px;
+
+letter-spacing:8px;
+
+margin-top:20px;
+
+color:#ffd95a;
+
+text-shadow:
+
+0 0 15px #ffd700,
+0 0 35px #ffd700;
+
+}
+
+.prince-page .signature{
+
+box-shadow:
+
+0 0 20px rgba(255,215,0,.35);
+
+}
