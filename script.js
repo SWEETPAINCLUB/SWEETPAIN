@@ -1,69 +1,143 @@
 // =======================================
-// SWEETPAIN | SCRIPT V1.1
+// SWEETPAIN | SCRIPT V2
 // =======================================
 
-// Animación al hacer scroll
-const sections = document.querySelectorAll("section");
+// Animación de entrada
+window.addEventListener("load", () => {
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, {
-    threshold: 0.15
-});
+    document.body.classList.add("loaded");
 
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(60px)";
-    section.style.transition = "all .8s ease";
-    observer.observe(section);
 });
 
 // =======================================
-// BOTÓN PRE-ORDER
+// SCROLL SUAVE DEL BOTÓN
 // =======================================
 
-const preorderButton = document.getElementById("preorderButton");
-const transition = document.getElementById("transition");
+const enterButton = document.querySelector(".enterButton");
 
-if (preorderButton && transition) {
+if (enterButton) {
 
-    preorderButton.addEventListener("click", function (e) {
+    enterButton.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        transition.classList.add("show");
+        document.querySelector("#home").scrollIntoView({
 
-        setTimeout(function () {
+            behavior:"smooth"
 
-            window.location.href =
-                "https://wa.me/525665897458?text=" +
-                "Hola%20SweetPain.%0A%0A" +
-                "Quiero%20unirme%20a%20la%20preventa%20del%20Artifact%20I%20—%20Quetzal.%0A%0A" +
-                "Código:%20%0A" +
-                "Talla:%20%0A" +
-                "Nombre:";
-
-        }, 1800);
+        });
 
     });
 
 }
 
 // =======================================
-// CAMBIAR TÍTULO
+// APARICIÓN DE SECCIONES
 // =======================================
 
-document.addEventListener("visibilitychange", function () {
+const sections = document.querySelectorAll("section");
 
-    if (document.hidden) {
-        document.title = "Come back to SWEETPAIN";
-    } else {
-        document.title = "SWEETPAIN";
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.style = "";
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+
+    threshold:.18
+
+});
+
+sections.forEach(section=>{
+
+    section.classList.add("hidden");
+
+    observer.observe(section);
+
+});
+
+// =======================================
+// EFECTO EN TARJETAS
+// =======================================
+
+const cards = document.querySelectorAll(".card,.signature");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-10px) scale(1.02)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0px) scale(1)";
+
+    });
+
+});
+
+// =======================================
+// TÍTULO DINÁMICO
+// =======================================
+
+const originalTitle = document.title;
+
+document.addEventListener("visibilitychange",()=>{
+
+    if(document.hidden){
+
+        document.title="Return to SWEETPAIN";
+
+    }else{
+
+        document.title=originalTitle;
+
     }
 
 });
+/* =====================================
+ANIMACIONES
+===================================== */
+
+body{
+
+opacity:0;
+
+transition:opacity 1.2s ease;
+
+}
+
+body.loaded{
+
+opacity:1;
+
+}
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:all .8s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
