@@ -1,4 +1,20 @@
 // =======================================
+// LOADING SCREEN
+// =======================================
+
+window.addEventListener("load",()=>{
+
+const loader=document.getElementById("loader");
+
+setTimeout(()=>{
+
+loader.classList.add("hide");
+
+document.body.classList.add("loaded");
+
+},2200);
+
+});// =======================================
 // SWEETPAIN | SCRIPT V2
 // =======================================
 
