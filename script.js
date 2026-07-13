@@ -216,6 +216,25 @@ Talla:
 Nombre:`;
 
 }
+    else if(document.body.classList.contains("cosmico-page")){
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+OFFICIAL SIGNATURE SERIES
+
+CÓSMICO
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+    } 
         else if(document.body.classList.contains("pantheon-page")){
 
             message=
