@@ -2078,3 +2078,88 @@ PERFORMANCE
 /* ==========================
 END OF FILE
 ========================== */
+/* ======================================
+   PRINCE COLLECTION
+====================================== */
+
+.collection{
+
+    text-align:center;
+
+}
+
+.collectionGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+.collectionCard{
+
+    background:#080808;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.35s;
+
+}
+
+.collectionCard img{
+
+    width:100%;
+
+    border-radius:14px;
+
+    margin-bottom:20px;
+
+}
+
+.collectionCard h4{
+
+    letter-spacing:4px;
+
+    margin-bottom:10px;
+
+}
+
+.collectionCard p{
+
+    color:#bdbdbd;
+
+    margin-bottom:25px;
+
+}
+
+.pieceButton{
+
+    width:100%;
+
+}
+
+.collectionCard:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+
+}
+
+.collectionCard.active{
+
+    border:2px solid #d4af37;
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.35);
+
+}
