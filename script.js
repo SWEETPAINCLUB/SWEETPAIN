@@ -262,6 +262,26 @@ Talla:
 Nombre:`;
 
     } 
+else if(document.body.classList.contains("milkhouse-page")){
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+OFFICIAL SIGNATURE SERIES
+
+I'M NOT NERD;
+I'M BULKING
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+}        
         else if(document.body.classList.contains("pantheon-page")){
 
             message=
