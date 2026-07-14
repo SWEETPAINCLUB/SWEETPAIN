@@ -179,9 +179,11 @@ if(preorderButton){
 
         let message="";
 
-        if(document.body.classList.contains("prince-page")){
+       if(document.body.classList.contains("prince-page")){
 
-            message=
+    if(currentPrincePiece===1){
+
+        message=
 `Hola SweetPain.
 
 Quiero realizar una pre-order de:
@@ -190,13 +192,38 @@ OFFICIAL SIGNATURE SERIES
 
 PRINCE MAGIC
 
-Precio: $249 MXN
+Signature I
+THE SHOW BEGINS
+
+Precio: $279 MXN
 
 Talla:
 
 Nombre:`;
 
-        }
+    }else{
+
+        message=
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+OFFICIAL SIGNATURE SERIES
+
+PRINCE MAGIC
+
+Signature II
+SECOND CHAPTER
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+    }
+
+}
 else if(document.body.classList.contains("alfa-page")){
 
     message=
@@ -306,7 +333,7 @@ function loadPrincePiece(piece){
     };
 
     const p=pieces[piece];
-
+currentPrincePiece = piece;
     document.getElementById("mainPresentation").src=p.hero;
 
     document.getElementById("galleryMockup").src=p.mockup;
