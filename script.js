@@ -320,5 +320,11 @@ function loadPrincePiece(piece){
     document.getElementById("productPrice").textContent=p.price;
 
     document.getElementById("heroSubtitle").textContent=p.title;
+document.querySelectorAll(".collectionCard").forEach(card=>{
 
+    card.classList.remove("active");
+
+});
+
+document.getElementById("piece"+piece).classList.add("active");
 }       
