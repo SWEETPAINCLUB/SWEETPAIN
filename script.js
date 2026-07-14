@@ -282,6 +282,25 @@ Talla:
 Nombre:`;
 
 }        
+    else if(document.body.classList.contains("essence-page")){
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+ESSENCE LINE
+
+ESSENCE
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+}
         else if(document.body.classList.contains("pantheon-page")){
 
             message=
