@@ -320,10 +320,10 @@ Nombre:`;
 // PRINCE COLLECTION
 // =======================================
 
+
 function loadPrincePiece(piece){
 
     if(!document.body.classList.contains("prince-page")) return;
-
     const pieces={
 
         1:{
