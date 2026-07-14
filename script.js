@@ -269,4 +269,56 @@ Nombre:`;
     });
 
 }
-        
+ // =======================================
+// PRINCE COLLECTION
+// =======================================
+
+function loadPrincePiece(piece){
+
+    if(!document.body.classList.contains("prince-page")) return;
+
+    const pieces={
+
+        1:{
+            code:"SS-001-01",
+            title:"THE SHOW BEGINS",
+            price:"$279 MXN",
+
+            hero:"princepresentacion.jpg",
+            mockup:"princemockup.jpg",
+            front:"princefrente.jpg",
+            back:"princeespalda.jpg",
+            artwork:"princedetalleestampado.jpg"
+        },
+
+        2:{
+            code:"SS-001-02",
+            title:"SECOND CHAPTER",
+            price:"$279 MXN",
+
+            hero:"prince2presentacion.jpg",
+            mockup:"prince2mockup.png",
+            front:"prince2frente.png",
+            back:"prince2espalda.png",
+            artwork:"prince2estampado.jpg"
+        }
+
+    };
+
+    const p=pieces[piece];
+
+    document.getElementById("mainPresentation").src=p.hero;
+
+    document.getElementById("galleryMockup").src=p.mockup;
+    document.getElementById("galleryFront").src=p.front;
+    document.getElementById("galleryBack").src=p.back;
+    document.getElementById("galleryArtwork").src=p.artwork;
+
+    document.getElementById("collectionCode").textContent=p.code;
+    document.getElementById("seriesCode").textContent=p.code;
+
+    document.getElementById("productPrice").textContent=p.price;
+
+    document.getElementById("heroSubtitle").textContent=p.title;
+
+}       
