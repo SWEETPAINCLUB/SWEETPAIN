@@ -303,7 +303,25 @@ Talla:
 Nombre:`;
 
 }
-    else if(document.body.classList.contains("essence-page")){
+   else if(document.body.classList.contains("essence-page")){
+
+    const names={
+
+        1:"ALL I NEED IS LOVE",
+        2:"FEET DON'T FAIL ME NOW",
+        3:"THE WINNER TAKES IT ALL",
+        4:"I'M NOT BROKEN. I'M EMPTY."
+
+    };
+
+    const codes={
+
+        1:"ESS-001",
+        2:"ESS-002",
+        3:"ESS-003",
+        4:"ESS-004"
+
+    };
 
     message=
 
@@ -313,7 +331,9 @@ Quiero realizar una pre-order de:
 
 ESSENCE LINE
 
-ESSENCE
+${names[currentEssencePiece]}
+
+Código: ${codes[currentEssencePiece]}
 
 Precio: $279 MXN
 
@@ -322,7 +342,7 @@ Talla:
 Nombre:`;
 
 }
-        else if(document.body.classList.contains("pantheon-page")){
+   else if(document.body.classList.contains("pantheon-page")){
 
             message=
 `Hola SweetPain.
