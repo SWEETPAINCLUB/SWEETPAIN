@@ -596,3 +596,155 @@ window.addEventListener("load",()=>{
     }
 
 });
+// =======================================
+// BUSHIDO COLLECTION
+// =======================================
+
+let currentBushidoPiece = 1;
+
+function loadBushidoPiece(piece){
+
+    if(!document.body.classList.contains("bushido-page")) return;
+
+    const pieces={
+
+        1:{
+            code:"BS-001",
+            title:"SEIJAKU",
+            subtitle:"The Way of the Warrior",
+            price:"$279 MXN",
+
+            hero:"bushidopresentacion.png",
+
+            mockup:"seijakumockup.png",
+            front:"seijakufrente.png",
+            back:"seijakuespalda.png",
+            artwork:"seijakuestampado.png",
+
+            description:
+`The first step of every warrior is silence.
+
+Before every battle there is stillness.
+
+Before every victory there is discipline.
+
+SEIJAKU represents the calm mind that exists before action.`,
+
+            story:
+`Silence is not weakness.
+
+It is self-control.
+
+The warrior who conquers his own mind has already won the hardest battle.`
+
+        },
+
+        2:{
+            code:"BS-002",
+            title:"SHIREN",
+            subtitle:"Trial",
+            price:"$279 MXN",
+
+            hero:"bushidopresentacion.png",
+
+            mockup:"shirenmockup.png",
+            front:"shirenfrente.png",
+            back:"shirenespalda.png",
+            artwork:"shirenestampado.png",
+
+            description:
+`Every warrior is tested.
+
+Pain reveals character.
+
+SHIREN represents the trials that forge greatness.`,
+
+            story:
+`Without hardship there is no growth.
+
+Every scar is proof that you kept moving forward.`
+
+        },
+
+        3:{
+            code:"BS-003",
+            title:"KEISHO",
+            subtitle:"Legacy",
+            price:"$279 MXN",
+
+            hero:"bushidopresentacion.png",
+
+            mockup:"keishomockup.png",
+            front:"keishofrente.png",
+            back:"keishoespalda.png",
+            artwork:"keishoestampado.png",
+
+            description:
+`A warrior's greatest achievement is not victory.
+
+It is leaving something worthy behind.
+
+KEISHO represents legacy.`,
+
+            story:
+`Names disappear.
+
+Legacies remain.
+
+What you build today becomes tomorrow's history.`
+
+        }
+
+    };
+
+    const p = pieces[piece];
+
+    currentBushidoPiece = piece;
+
+    document.getElementById("heroSubtitle").textContent = p.subtitle;
+
+    document.getElementById("mainPresentation").src = p.hero;
+
+    document.getElementById("collectionCode").textContent = p.code;
+
+    document.getElementById("productTitle").textContent = p.title;
+
+    document.getElementById("productDescription").textContent = p.description;
+
+    document.getElementById("storyText").textContent = p.story;
+
+    document.getElementById("galleryFront").src = p.front;
+
+    document.getElementById("galleryBack").src = p.back;
+
+    document.getElementById("galleryArtwork").src = p.artwork;
+
+    document.getElementById("galleryMockup").src = p.mockup;
+
+    document.getElementById("productPrice").textContent = p.price;
+
+    document.getElementById("buyTitle").textContent = p.title;
+
+    document.getElementById("seriesCode").textContent = p.code;
+
+    document.getElementById("footerCode").textContent = p.code;
+
+    document.querySelectorAll(".collectionCard").forEach(card=>{
+
+        card.classList.remove("active");
+
+    });
+
+    document.getElementById("piece"+piece).classList.add("active");
+
+}
+
+window.addEventListener("load",()=>{
+
+    if(document.body.classList.contains("bushido-page")){
+
+        loadBushidoPiece(1);
+
+    }
+
+});
