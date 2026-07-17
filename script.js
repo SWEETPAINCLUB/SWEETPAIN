@@ -281,7 +281,28 @@ Talla:
 
 Nombre:`;
 
-}        
+}     
+    else if(document.body.classList.contains("valentine-page")){
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+OFFICIAL SIGNATURE SERIES
+
+VALENTÍNE
+
+DO YOU WANNA TASTE IT?
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+}
     else if(document.body.classList.contains("essence-page")){
 
     message=
