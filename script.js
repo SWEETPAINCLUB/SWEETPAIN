@@ -342,6 +342,45 @@ Talla:
 Nombre:`;
 
 }
+       else if(document.body.classList.contains("bushido-page")){
+
+    const names={
+
+        1:"SEIJAKU",
+        2:"SHIREN",
+        3:"KEISHO"
+
+    };
+
+    const codes={
+
+        1:"BS-001",
+        2:"BS-002",
+        3:"BS-003"
+
+    };
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+COLLECTION 002
+
+BUSHIDO
+
+${names[currentBushidoPiece]}
+
+Código: ${codes[currentBushidoPiece]}
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+}
    else if(document.body.classList.contains("pantheon-page")){
 
             message=
