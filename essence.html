@@ -4,10 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ESSENCE | SweetPain</title>
+<title>ESSENCE | SWEETPAIN</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,7 +22,7 @@
 
 <p class="seriesTitle">
 
-ESSENCE
+ESSENCE LINE
 
 </p>
 
@@ -33,25 +32,24 @@ ESSENCE
 
 </h1>
 
-<h3>
+<h3 id="heroSubtitle">
 
-THE PUREST FORM
+ALL I NEED IS LOVE
 
 </h3>
 
 <p class="heroDescription">
 
-Not every design needs a collaboration.
+Some words are worn.
+Others become part of who you are.
 
-Some are born from the identity of SweetPain itself.
-
-ESSENCE represents the origin.
+ESSENCE is a collection built around phrases that stay with you long after they're spoken.
 
 </p>
 
 <a href="#product" class="enterButton">
 
-DISCOVER ESSENCE
+DISCOVER THE COLLECTION
 
 </a>
 
@@ -61,463 +59,77 @@ DISCOVER ESSENCE
 
 <main>
 
-<section id="product" class="signatureProduct">
+<!-- ========================= -->
+<!-- COLLECTION SELECTOR -->
+<!-- ========================= -->
 
-<div class="productImage">
-
-<img src="essencepresentacion.png" alt="ESSENCE">
-
-</div>
-
-<div class="productInfo">
-
-<p class="collectionNumber">
-
-ES-001
-
-</p>
-
-<h2>
-
-ESSENCE
-
-</h2>
-
-<p class="officialText">
-
-SweetPain Essentials
-
-</p>
-
-<p class="productDescription">
-
-A premium oversized garment created to represent the pure identity of SweetPain.
-
-Designed without limits.
-
-Created to become timeless.
-
-</p>
-
-</div>
-
-</section>
-
-<section class="story">
+<section class="essenceCollection">
 
 <h3>
 
-THE STORY
+THE COLLECTION
 
 </h3>
 
-<p>
+<div class="collectionSelector">
 
-ESSENCE is where everything begins.
+<div class="collectionCard active"
+id="piece1"
+onclick="loadEssencePiece(1)">
 
-No collaborations.
-
-No mythology.
-
-No characters.
-
-Just the vision behind SweetPain, transformed into a garment.
-
-</p>
-
-</section>
-<section class="gallery">
-
-<h3>
-
-GALLERY
-
-</h3>
-
-<p class="gallerySubtitle">
-
-Explore every detail of the ESSENCE LINE.
-
-</p>
-
-<div class="gallery-grid">
-
-<div class="galleryItem">
-
-<img src="essencemockup.png" alt="Official Mockup">
-
-<p>
-
-OFFICIAL MOCKUP
-
-</p>
-
-</div>
-
-<div class="galleryItem">
-
-<img src="essencefrente.png" alt="Front View">
-
-<p>
-
-FRONT VIEW
-
-</p>
-
-</div>
-
-<div class="galleryItem">
-
-<img src="essenceespalda.png" alt="Back View">
-
-<p>
-
-BACK VIEW
-
-</p>
-
-</div>
-
-<div class="galleryItem">
-
-<img src="essenceestampado.png" alt="Artwork Detail">
-
-<p>
-
-ARTWORK DETAIL
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="details">
-
-<h3>
-
-PRODUCT DETAILS
-
-</h3>
-
-<div class="detailsGrid">
-
-<div class="detailCard">
-
-<span>
-
-FIT
-
-</span>
-
-<p>
-
-Oversized
-
-</p>
-
-</div>
-
-<div class="detailCard">
-
-<span>
-
-MATERIAL
-
-</span>
-
-<p>
-
-100% Cotton
-
-</p>
-
-</div>
-
-<div class="detailCard">
-
-<span>
-
-PRINT
-
-</span>
-
-<p>
-
-Premium DTF
-
-</p>
-
-</div>
-
-<div class="detailCard">
-
-<span>
-
-PRICE
-
-</span>
-
-<p>
-
-$279 MXN
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-<section class="buy">
-
-<p class="seriesBadge">
-
-ESSENCE LINE
-
-</p>
-
-<h2>
-
-$279 MXN
-
-</h2>
-
-<p class="buyDescription">
-
-Premium oversized garment crafted exclusively after your order is placed.
-
-</p>
-
-<div class="productSpecs">
-
-<div class="spec">
-
-<span>FIT</span>
-
-<p>OVERSIZED</p>
-
-</div>
-
-<div class="spec">
-
-<span>PRINT</span>
-
-<p>DTF PREMIUM</p>
-
-</div>
-
-<div class="spec">
-
-<span>LINE</span>
-
-<p>ES-001</p>
-
-</div>
-
-<div class="spec">
-
-<span>COLLECTION</span>
-
-<p>ESSENCE</p>
-
-</div>
-
-</div>
-
-<div class="sizes">
+<span>001</span>
 
 <h4>
 
-AVAILABLE SIZES
+ALL I NEED IS LOVE
 
 </h4>
 
-<div class="sizeGrid">
+</div>
 
-<span>S</span>
+<div class="collectionCard"
+id="piece2"
+onclick="loadEssencePiece(2)">
 
-<span>M</span>
+<span>002</span>
 
-<span>L</span>
+<h4>
 
-<span>XL</span>
+FEET DON'T FAIL ME NOW
+
+</h4>
 
 </div>
 
-</div>
+<div class="collectionCard"
+id="piece3"
+onclick="loadEssencePiece(3)">
 
-<a href="#" id="preorderButton" class="enterButton">
+<span>003</span>
 
-JOIN THE PRE-ORDER
+<h4>
 
-</a>
+THE WINNER TAKES IT ALL
 
-<p class="madeOnDemand">
-
-Created on demand.<br>
-
-Crafted from the essence of SweetPain.
-
-</p>
-
-</section>
-
-<section class="experience">
-
-<h3>
-
-THE ESSENCE
-
-</h3>
-
-<div class="experienceGrid">
-
-<div class="experienceCard">
-
-<h2>⚫</h2>
-
-<h4>PURE IDENTITY</h4>
-
-<p>
-
-Designed to represent the essence of SweetPain without collaborations or external themes.
-
-</p>
+</h4>
 
 </div>
 
-<div class="experienceCard">
+<div class="collectionCard"
+id="piece4"
+onclick="loadEssencePiece(4)">
 
-<h2>👕</h2>
+<span>004</span>
 
-<h4>OVERSIZED FIT</h4>
+<h4>
 
-<p>
+I'M NOT BROKEN.
+I'M EMPTY.
 
-Relaxed oversized fit made for everyday wear and training.
-
-</p>
-
-</div>
-
-<div class="experienceCard">
-
-<h2>🎨</h2>
-
-<h4>PREMIUM PRINT</h4>
-
-<p>
-
-High-quality DTF printing with durable colors and sharp details.
-
-</p>
-
-</div>
-
-<div class="experienceCard">
-
-<h2>📦</h2>
-
-<h4>MADE ON DEMAND</h4>
-
-<p>
-
-Every piece is produced after your order to ensure premium quality.
-
-</p>
+</h4>
 
 </div>
 
 </div>
 
 </section>
-<section class="nextSignature">
-
-<h3>
-
-NEXT ESSENCE
-
-</h3>
-
-<h1>
-
-COMING SOON
-
-</h1>
-
-<p>
-
-A new chapter of the ESSENCE LINE is already in development.
-
-</p>
-
-</section>
-
-</main>
-
-<footer>
-
-<h2>
-
-SWEETPAIN
-
-</h2>
-
-<p>
-
-ESSENCE LINE
-
-</p>
-
-<p>
-
-ESSENCE • ES-001
-
-</p>
-
-<a href="index.html">
-
-← BACK TO HOME
-
-</a>
-
-</footer>
-
-<div id="transition">
-
-<div class="transition-content">
-
-<h1>
-
-ACCESS GRANTED
-
-</h1>
-
-<p>
-
-WELCOME TO SWEETPAIN CLUB
-
-</p>
-
-</div>
-
-</div>
-
-<!-- LIGHTBOX -->
-
-<div id="lightbox">
-
-<span id="closeLightbox">&times;</span>
-
-<img id="lightboxImage" src="" alt="">
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
