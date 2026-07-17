@@ -2296,3 +2296,270 @@ transform:translateY(-8px);
 transition:.35s;
 
 }
+/* ===========================================
+   BUSHIDO
+=========================================== */
+
+.bushido-page{
+
+    background:#070707;
+
+}
+
+.bushido-page .signatureHero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.86)),
+    url("bushidopresentacion.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.bushido-page .heroContent{
+
+    max-width:900px;
+
+}
+
+.bushido-page .heroContent h1{
+
+    font-size:6rem;
+
+    letter-spacing:12px;
+
+    font-weight:200;
+
+}
+
+.bushido-page .heroContent h3{
+
+    color:#d4c2a5;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+}
+
+.bushido-page .heroDescription{
+
+    max-width:650px;
+
+    line-height:2;
+
+    color:#d6d6d6;
+
+}
+
+/* COLLECTION */
+
+.essenceCollection{
+
+    padding:120px 8%;
+
+}
+
+.collectionSelector{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.collectionCard{
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:45px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.collectionCard span{
+
+    color:#8d8d8d;
+
+    letter-spacing:3px;
+
+    font-size:.85rem;
+
+}
+
+.collectionCard h4{
+
+    margin:18px 0;
+
+    font-size:2rem;
+
+    font-weight:300;
+
+    letter-spacing:4px;
+
+}
+
+.collectionCard p{
+
+    color:#bfbfbf;
+
+    letter-spacing:2px;
+
+}
+
+.collectionCard:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4c2a5;
+
+}
+
+.collectionCard.active{
+
+    background:#171717;
+
+    border-color:#d4c2a5;
+
+}
+
+/* PRODUCT */
+
+.bushido-page .signatureProduct{
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.bushido-page .productImage img{
+
+    width:100%;
+
+    border-radius:12px;
+
+    transition:.5s;
+
+}
+
+.bushido-page .productInfo h2{
+
+    font-size:4rem;
+
+    letter-spacing:8px;
+
+    font-weight:300;
+
+}
+
+.bushido-page .collectionNumber{
+
+    color:#d4c2a5;
+
+    letter-spacing:5px;
+
+}
+
+/* GALLERY */
+
+.bushido-page .gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.bushido-page .galleryItem{
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+.bushido-page .galleryItem img{
+
+    transition:.5s;
+
+}
+
+.bushido-page .galleryItem:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* BUY */
+
+.bushido-page .buy{
+
+    background:#0d0d0d;
+
+}
+
+.bushido-page .enterButton{
+
+    border:1px solid #d4c2a5;
+
+    color:#fff;
+
+}
+
+.bushido-page .enterButton:hover{
+
+    background:#d4c2a5;
+
+    color:#000;
+
+}
+
+/* EXPERIENCE */
+
+.bushido-page .experienceCard{
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.bushido-page .experienceCard:hover{
+
+    border-color:#d4c2a5;
+
+    transform:translateY(-6px);
+
+}
+
+/* FOOTER */
+
+.bushido-page footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.bushido-page footer p{
+
+    color:#9d9d9d;
+
+}
