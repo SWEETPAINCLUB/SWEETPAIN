@@ -415,3 +415,164 @@ document.querySelectorAll(".collectionCard").forEach(card=>{
 
 document.getElementById("piece"+piece).classList.add("active");
 }       
+// =======================================
+// ESSENCE COLLECTION
+// =======================================
+
+let currentEssencePiece = 1;
+
+function loadEssencePiece(piece){
+
+    if(!document.body.classList.contains("essence-page")) return;
+
+    const pieces={
+
+        1:{
+            code:"ESS-001",
+            title:"ALL I NEED IS LOVE",
+            price:"$279 MXN",
+
+            hero:"essencepresentacion.jpg",
+            mockup:"essencemockup.png",
+            front:"essencefrente.png",
+            back:"essenceespalda.png",
+            artwork:"essenceestampado.png",
+
+            description:
+`The first chapter of the ESSENCE collection.
+
+Some words never lose their meaning.
+
+ALL I NEED IS LOVE represents hope, vulnerability and everything that keeps us moving.`,
+
+            story:
+`ESSENCE begins with the simplest truth.
+
+Sometimes all we really need is love.`
+
+        },
+
+        2:{
+            code:"ESS-002",
+            title:"FEET DON'T FAIL ME NOW",
+            price:"$279 MXN",
+
+            hero:"essence02mockup.png",
+            mockup:"essence02mockup.png",
+            front:"essence02frente.png",
+            back:"essence02espalda.png",
+            artwork:"essence02estampado.png",
+
+            description:
+`Keep moving.
+
+Even when fear appears.
+
+Even when nobody believes.
+
+Feet don't fail me now.`,
+
+            story:
+`Fear exists.
+
+Stopping is optional.`
+
+        },
+
+        3:{
+            code:"ESS-003",
+            title:"THE WINNER TAKES IT ALL",
+            price:"$279 MXN",
+
+            hero:"essence03mockup.png",
+            mockup:"essence03mockup.png",
+            front:"essence03frente.png",
+            back:"essence03espalda.png",
+            artwork:"essence03estampado.png",
+
+            description:
+`Winning has a price.
+
+Every sacrifice leaves a mark.
+
+The Winner Takes It All.`,
+
+            story:
+`Success belongs to those willing to pay its cost.`
+
+        },
+
+        4:{
+            code:"ESS-004",
+            title:"I'M NOT BROKEN. I'M EMPTY.",
+            price:"$279 MXN",
+
+            hero:"essence04mockup.png",
+            mockup:"essence04mockup.png",
+            front:"essence04frente.png",
+            back:"essence04espalda.png",
+            artwork:"essence04estampado.png",
+
+            description:
+`Not every wound is visible.
+
+Some people aren't broken.
+
+They're simply empty.`,
+
+            story:
+`Silence also tells stories.`
+
+        }
+
+    };
+
+    const p = pieces[piece];
+
+    currentEssencePiece = piece;
+
+    // HERO
+    document.getElementById("heroSubtitle").textContent = p.title;
+
+    // PRODUCT
+    document.getElementById("mainPresentation").src = p.hero;
+    document.getElementById("collectionCode").textContent = p.code;
+    document.getElementById("productTitle").textContent = p.title;
+    document.getElementById("productDescription").textContent = p.description;
+
+    // STORY
+    document.getElementById("storyText").textContent = p.story;
+
+    // GALLERY
+    document.getElementById("galleryFront").src = p.front;
+    document.getElementById("galleryBack").src = p.back;
+    document.getElementById("galleryArtwork").src = p.artwork;
+    document.getElementById("galleryMockup").src = p.mockup;
+
+    // BUY
+    document.getElementById("productPrice").textContent = p.price;
+    document.getElementById("buyTitle").textContent = p.title;
+    document.getElementById("seriesCode").textContent = p.code;
+    document.getElementById("footerCode").textContent = p.code;
+
+    // ACTIVE CARD
+    document.querySelectorAll(".collectionCard").forEach(card=>{
+
+        card.classList.remove("active");
+
+    });
+
+    document.getElementById("piece"+piece).classList.add("active");
+
+}
+
+// Cargar automáticamente la primera pieza
+window.addEventListener("load",()=>{
+
+    if(document.body.classList.contains("essence-page")){
+
+        loadEssencePiece(1);
+
+    }
+
+});
