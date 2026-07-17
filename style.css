@@ -2203,3 +2203,96 @@ ESSENCE LINE
     transform:translateY(-8px);
 
 }
+/* ===========================
+   VALENTÍNE SIGNATURE SERIES
+=========================== */
+
+.signature.valentine{
+
+background:
+linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)),
+url("valentinepresentacion.jpg");
+
+background-size: cover;
+background-position: center;
+
+}
+
+.valentine-page .signatureHero{
+
+background:
+linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)),
+url("valentinepresentacion.jpg");
+
+background-size: cover;
+background-position: center;
+
+}
+
+.valentine-page .seriesTitle{
+
+color:#d8d8d8;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+}
+
+.valentine-page h1{
+
+color:white;
+
+text-shadow:0 0 20px rgba(255,255,255,.15);
+
+}
+
+.valentine-page h3{
+
+color:#cfcfcf;
+
+letter-spacing:3px;
+
+}
+
+.valentine-page .collectionNumber{
+
+color:#bdbdbd;
+
+}
+
+.valentine-page .officialText{
+
+color:#9d9d9d;
+
+}
+
+.valentine-page .enterButton:hover{
+
+box-shadow:0 0 25px rgba(255,255,255,.35);
+
+transform:translateY(-3px);
+
+transition:.35s;
+
+}
+
+.valentine-page .detailCard:hover,
+
+.valentine-page .experienceCard:hover{
+
+border-color:#ffffff;
+
+transform:translateY(-6px);
+
+transition:.35s;
+
+}
+
+.signature.valentine:hover{
+
+transform:translateY(-8px);
+
+transition:.35s;
+
+}
