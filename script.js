@@ -865,7 +865,7 @@ Power belongs to those who refuse to kneel.`
 
     };
 
-    const p = pieces[p];
+    const p = pieces[piece];
 
     currentPantheonPiece = piece;
 
