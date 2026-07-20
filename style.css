@@ -2563,3 +2563,256 @@ transition:.35s;
     color:#9d9d9d;
 
 }
+/* ===========================================
+   THE PANTHEON V2
+=========================================== */
+
+.pantheon-page{
+
+    background:#050505;
+
+}
+
+/* HERO */
+
+.pantheon-page .signatureHero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.86)),
+    url("quetzalpresentacion.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    transition:1s;
+
+}
+
+.pantheon-page .heroContent{
+
+    max-width:900px;
+
+}
+
+.pantheon-page .heroContent h1{
+
+    font-size:6rem;
+
+    font-weight:200;
+
+    letter-spacing:10px;
+
+}
+
+.pantheon-page .heroContent h3{
+
+    color:#d6b44d;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+}
+
+.pantheon-page .heroDescription{
+
+    max-width:650px;
+
+    line-height:2;
+
+    color:#d9d9d9;
+
+}
+
+/* COLLECTION */
+
+.pantheon-page .collectionCard{
+
+    background:#111;
+
+    border:1px solid rgba(214,180,77,.18);
+
+    transition:.4s;
+
+}
+
+.pantheon-page .collectionCard:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d6b44d;
+
+}
+
+.pantheon-page .collectionCard.active{
+
+    background:#181818;
+
+    border-color:#d6b44d;
+
+}
+
+/* PRODUCT */
+
+.pantheon-page .signatureProduct{
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.pantheon-page .productImage img{
+
+    width:100%;
+
+    border-radius:14px;
+
+    transition:.45s;
+
+}
+
+.pantheon-page .collectionNumber{
+
+    color:#d6b44d;
+
+    letter-spacing:5px;
+
+}
+
+.pantheon-page .productInfo h2{
+
+    font-size:4rem;
+
+    font-weight:300;
+
+    letter-spacing:8px;
+
+}
+
+/* GALLERY */
+
+.pantheon-page .gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.pantheon-page .galleryItem{
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+.pantheon-page .galleryItem img{
+
+    transition:.5s;
+
+}
+
+.pantheon-page .galleryItem:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* BUY */
+
+.pantheon-page .buy{
+
+    background:#0d0d0d;
+
+}
+
+.pantheon-page .enterButton{
+
+    border:1px solid #d6b44d;
+
+    color:white;
+
+}
+
+.pantheon-page .enterButton:hover{
+
+    background:#d6b44d;
+
+    color:black;
+
+}
+
+/* DETAILS */
+
+.pantheon-page .detailCard{
+
+    transition:.35s;
+
+}
+
+.pantheon-page .detailCard:hover{
+
+    border-color:#d6b44d;
+
+}
+
+/* EXPERIENCE */
+
+.pantheon-page .experienceCard{
+
+    transition:.35s;
+
+    border:1px solid rgba(214,180,77,.12);
+
+}
+
+.pantheon-page .experienceCard:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#d6b44d;
+
+}
+
+/* FOOTER */
+
+.pantheon-page footer{
+
+    border-top:1px solid rgba(214,180,77,.15);
+
+}
+
+.pantheon-page footer p{
+
+    color:#9c9c9c;
+
+}
+
+/* FADE */
+
+.fade-change{
+
+    opacity:0;
+
+    transform:translateY(12px);
+
+    transition:.35s;
+
+}
+
+.fade-change.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
