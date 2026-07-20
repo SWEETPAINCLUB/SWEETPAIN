@@ -787,3 +787,141 @@ window.addEventListener("load",()=>{
     }
 
 });
+// =======================================
+// THE PANTHEON COLLECTION
+// =======================================
+
+let currentPantheonPiece = 1;
+
+function loadPantheonPiece(piece){
+
+    if(!document.body.classList.contains("pantheon-page")) return;
+
+    const pieces={
+
+        1:{
+            code:"PT-001",
+            title:"QUETZAL",
+            subtitle:"The Feathered Serpent",
+            price:"$319 MXN",
+
+            hero:"quetzalpresentacion.png",
+
+            mockup:"quetzalmockup.png",
+            front:"quetzalfrente.png",
+            back:"quetzalespalda.png",
+            artwork:"quetzalestampado.png",
+
+            description:
+`The Feathered Serpent.
+
+A symbol of wisdom, creation and balance.
+
+QUETZAL represents the beginning of the Pantheon and the eternal connection between heaven and earth.`,
+
+            story:
+`Quetzal is more than a god.
+
+He is knowledge.
+
+He is creation.
+
+He is the force that gave life to civilizations.
+
+Every Artifact preserves part of that legacy.`
+
+        },
+
+        2:{
+            code:"PT-002",
+            title:"HUITZILOPOCHTLI",
+            subtitle:"God of Sun & War",
+            price:"$319 MXN",
+
+            hero:"huitzilpresentacion.png",
+
+            mockup:"huitzilmockup.png",
+            front:"huitzilfrente.png",
+            back:"huitzilespalda.png",
+            artwork:"huitzilestampado.png",
+
+            description:
+`The supreme god of war and the rising sun.
+
+HUITZILOPOCHTLI represents courage, sacrifice and absolute determination.
+
+Only those willing to fight deserve glory.`,
+
+            story:
+`The sun rises because warriors never surrender.
+
+Every battle leaves a mark.
+
+Every victory demands sacrifice.
+
+Power belongs to those who refuse to kneel.`
+
+        }
+
+    };
+
+    const p = pieces[p];
+
+    currentPantheonPiece = piece;
+
+    // HERO
+    document.querySelector(".pantheon-page .signatureHero").style.background =
+    `linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.86)),
+    url('${p.hero}') center/cover`;
+
+    document.getElementById("heroSubtitle").textContent = p.subtitle;
+
+    // PRODUCT
+    document.getElementById("mainPresentation").src = p.hero;
+
+    document.getElementById("collectionCode").textContent = p.code;
+
+    document.getElementById("productTitle").textContent = p.title;
+
+    document.getElementById("productDescription").textContent = p.description;
+
+    document.getElementById("storyText").textContent = p.story;
+
+    // GALLERY
+    document.getElementById("galleryFront").src = p.front;
+
+    document.getElementById("galleryBack").src = p.back;
+
+    document.getElementById("galleryArtwork").src = p.artwork;
+
+    document.getElementById("galleryMockup").src = p.mockup;
+
+    // BUY
+    document.getElementById("productPrice").textContent = p.price;
+
+    document.getElementById("buyTitle").textContent = p.title;
+
+    document.getElementById("seriesCode").textContent = p.code;
+
+    document.getElementById("footerCode").textContent = p.code;
+
+    // ACTIVE CARD
+    document.querySelectorAll(".collectionCard").forEach(card=>{
+
+        card.classList.remove("active");
+
+    });
+
+    document.getElementById("piece"+piece).classList.add("active");
+
+}
+
+window.addEventListener("load",()=>{
+
+    if(document.body.classList.contains("pantheon-page")){
+
+        loadPantheonPiece(1);
+
+    }
+
+});
