@@ -381,6 +381,43 @@ Talla:
 Nombre:`;
 
 }
+else if(document.body.classList.contains("pantheon-page")){
+
+    const names={
+
+        1:"QUETZAL",
+        2:"HUITZILOPOCHTLI"
+
+    };
+
+    const codes={
+
+        1:"PT-001",
+        2:"PT-002"
+
+    };
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+COLLECTION 001
+
+THE PANTHEON
+
+${names[currentPantheonPiece]}
+
+Código: ${codes[currentPantheonPiece]}
+
+Precio: $319 MXN
+
+Talla:
+
+Nombre:`;
+
+}           
    else if(document.body.classList.contains("pantheon-page")){
 
             message=
