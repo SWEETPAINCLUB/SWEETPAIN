@@ -417,7 +417,52 @@ Talla:
 
 Nombre:`;
 
-}           
+}    
+    else if(document.body.classList.contains("legends-page")){
+
+    const names={
+
+        1:"THE HEADLESS HORSEMAN",
+        2:"THE KRAKEN",
+        3:"LA LLORONA",
+        4:"THE BASILISK",
+        5:"THE LOCH NESS MONSTER",
+        6:"BIGFOOT"
+
+    };
+
+    const codes={
+
+        1:"LEG-001",
+        2:"LEG-002",
+        3:"LEG-003",
+        4:"LEG-004",
+        5:"LEG-005",
+        6:"LEG-006"
+
+    };
+
+    message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+COLLECTION 003
+
+LEGENDS
+
+${names[currentLegendsPiece]}
+
+Código: ${codes[currentLegendsPiece]}
+
+Precio: $319 MXN
+
+Talla:
+
+Nombre:`;
+
+}
    else if(document.body.classList.contains("pantheon-page")){
 
             message=
