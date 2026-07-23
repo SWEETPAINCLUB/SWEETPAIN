@@ -2816,3 +2816,115 @@ transition:.35s;
     transform:translateY(0);
 
 }
+/* ==========================================
+   LEGENDS COLLECTION
+========================================== */
+
+.legends-page .signatureHero{
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
+    url("legendspresentacion.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+}
+
+.legends-page .seriesTitle{
+
+    color:#bcbcbc;
+    letter-spacing:8px;
+    text-transform:uppercase;
+
+}
+
+.legends-page h1{
+
+    color:#fff;
+    letter-spacing:5px;
+
+}
+
+.legends-page .heroDescription{
+
+    color:#d8d8d8;
+    max-width:720px;
+    line-height:1.8;
+
+}
+
+.legends-page .collectionCard{
+
+    transition:.35s ease;
+
+}
+
+.legends-page .collectionCard:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.legends-page .collectionCard.active{
+
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.06);
+
+}
+
+.legends-page .galleryItem img{
+
+    transition:.35s ease;
+    cursor:pointer;
+
+}
+
+.legends-page .galleryItem img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.legends-page .detailCard{
+
+    transition:.35s;
+
+}
+
+.legends-page .detailCard:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.legends-page .experienceCard{
+
+    transition:.35s;
+
+}
+
+.legends-page .experienceCard:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.legends-page .enterButton{
+
+    transition:.35s;
+
+}
+
+.legends-page .enterButton:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.legends-page footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
