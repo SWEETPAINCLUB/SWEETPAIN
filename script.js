@@ -962,3 +962,252 @@ window.addEventListener("load",()=>{
     }
 
 });
+// =======================================
+// LEGENDS COLLECTION
+// =======================================
+
+let currentLegendsPiece = 1;
+
+function loadLegendsPiece(piece){
+
+    if(!document.body.classList.contains("legends-page")) return;
+
+    const pieces={
+
+        1:{
+            code:"LEG-001",
+            title:"THE HEADLESS HORSEMAN",
+            subtitle:"Death never rides alone.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend01mockup.png",
+            front:"legend01frente.png",
+            back:"legend01espalda.png",
+            artwork:"legend01estampado.png",
+
+            description:
+`Some riders never reached their destination.
+
+Others never stopped riding.
+
+The Headless Horseman is the embodiment of inevitable death, roaming through darkness in search of those whose time has come.`,
+
+            story:
+`Witnesses never describe the rider.
+
+They only remember the sound.
+
+Hooves breaking the silence.
+
+A shadow crossing the fog.
+
+Then...
+
+one body less.`
+
+        },
+
+        2:{
+            code:"LEG-002",
+            title:"THE KRAKEN",
+            subtitle:"Fear lives beneath.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend02mockup.png",
+            front:"legend02frente.png",
+            back:"legend02espalda.png",
+            artwork:"legend02estampado.png",
+
+            description:
+`The ocean has always hidden things humanity was never meant to see.
+
+The Kraken is the ruler of the abyss.`,
+
+            story:
+`Sailors never feared the storm.
+
+They feared what moved beneath it.
+
+The sea always remembers.`
+
+        },
+
+        3:{
+            code:"LEG-003",
+            title:"LA LLORONA",
+            subtitle:"Her cry never stopped.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend03mockup.png",
+            front:"legend03frente.png",
+            back:"legend03espalda.png",
+            artwork:"legend03estampado.png",
+
+            description:
+`Her voice has crossed generations.
+
+No one knows where she came from.
+
+Everyone knows her cry.`,
+
+            story:
+`If you hear her far away...
+
+she is close.
+
+If you hear her close...
+
+it's already too late.`
+
+        },
+
+        4:{
+            code:"LEG-004",
+            title:"THE BASILISK",
+            subtitle:"Do not meet its eyes.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend04mockup.png",
+            front:"legend04frente.png",
+            back:"legend04espalda.png",
+            artwork:"legend04estampado.png",
+
+            description:
+`Some monsters hunt.
+
+Others simply wait.
+
+One look is enough.`,
+
+            story:
+`Every victim saw the same thing.
+
+Its eyes.
+
+Then...
+
+nothing.`
+
+        },
+
+        5:{
+            code:"LEG-005",
+            title:"THE LOCH NESS MONSTER",
+            subtitle:"The lake still remembers.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend05mockup.png",
+            front:"legend05frente.png",
+            back:"legend05espalda.png",
+            artwork:"legend05estampado.png",
+
+            description:
+`The water has kept its secret for centuries.
+
+Perhaps the legend never wanted to be found.`,
+
+            story:
+`Silence.
+
+Mist.
+
+A ripple across the lake.
+
+Then...
+
+something enormous disappears beneath the surface.`
+
+        },
+
+        6:{
+            code:"LEG-006",
+            title:"BIGFOOT",
+            subtitle:"The forest was never ours.",
+            price:"$319 MXN",
+
+            hero:"legendspresentacion.png",
+
+            mockup:"legend06mockup.png",
+            front:"legend06frente.png",
+            back:"legend06espalda.png",
+            artwork:"legend06estampado.png",
+
+            description:
+`Long before mankind walked the forests...
+
+something else already lived there.`,
+
+            story:
+`The footprints are real.
+
+The witnesses disagree.
+
+The forest...
+
+never speaks.`
+
+        }
+
+    };
+
+    const p = pieces[piece];
+
+    currentLegendsPiece = piece;
+
+    document.getElementById("heroSubtitle").textContent = p.subtitle;
+
+    document.getElementById("mainPresentation").src = p.hero;
+
+    document.getElementById("collectionCode").textContent = p.code;
+
+    document.getElementById("productTitle").textContent = p.title;
+
+    document.getElementById("productDescription").textContent = p.description;
+
+    document.getElementById("storyText").textContent = p.story;
+
+    document.getElementById("galleryFront").src = p.front;
+
+    document.getElementById("galleryBack").src = p.back;
+
+    document.getElementById("galleryArtwork").src = p.artwork;
+
+    document.getElementById("galleryMockup").src = p.mockup;
+
+    document.getElementById("productPrice").textContent = p.price;
+
+    document.getElementById("buyTitle").textContent = p.title;
+
+    document.getElementById("seriesCode").textContent = p.code;
+
+    document.getElementById("footerCode").textContent = p.code;
+
+    document.querySelectorAll(".collectionCard").forEach(card=>{
+
+        card.classList.remove("active");
+
+    });
+
+    document.getElementById("piece"+piece).classList.add("active");
+
+}
+
+window.addEventListener("load",()=>{
+
+    if(document.body.classList.contains("legends-page")){
+
+        loadLegendsPiece(1);
+
+    }
+
+});
