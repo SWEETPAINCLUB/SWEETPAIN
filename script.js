@@ -1256,3 +1256,42 @@ window.addEventListener("load",()=>{
     }
 
 });
+// =======================================
+// GOLDEN GIRL
+// =======================================
+
+if(document.body.classList.contains("goldengirl-page")){
+
+    document.getElementById("preorderButton").addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        const message=
+
+`Hola SweetPain.
+
+Quiero realizar una pre-order de:
+
+SIGNATURE SERIES
+
+GOLDEN GIRL
+
+Código: SS-002
+
+Precio: $279 MXN
+
+Talla:
+
+Nombre:`;
+
+        window.open(
+
+            "https://wa.me/TUNUMERO?text="+encodeURIComponent(message),
+
+            "_blank"
+
+        );
+
+    });
+
+}
