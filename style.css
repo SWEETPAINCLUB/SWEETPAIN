@@ -3063,3 +3063,406 @@ transition:.35s;
     color:#bfbfbf;
 
 }
+/* ==========================================
+   PRINCESA DEL SOL
+   SIGNATURE SERIES SS-007
+========================================== */
+
+
+/* ==========================
+PAGE IDENTITY
+========================== */
+
+.princesa-page{
+
+    background:#000;
+
+    color:#fff;
+
+}
+
+
+
+/* ==========================
+HERO
+========================== */
+
+
+.princesa-page .signatureHero{
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.88)
+    ),
+
+    url("princesapresentacion.jpg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+
+
+
+
+.princesa-page .seriesTitle{
+
+    color:#d4af37;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+
+.princesa-page h1{
+
+    color:#fff;
+
+    letter-spacing:8px;
+
+    text-shadow:
+
+    0 0 20px rgba(212,175,55,.35),
+
+    0 0 50px rgba(212,175,55,.15);
+
+}
+
+
+
+
+
+.princesa-page .signatureHero h3{
+
+    color:#e8c766;
+
+    letter-spacing:6px;
+
+}
+
+
+
+
+
+.princesa-page .heroDescription{
+
+    max-width:720px;
+
+    color:#dedede;
+
+    line-height:2;
+
+}
+
+
+
+
+
+/* ==========================
+STORY
+========================== */
+
+
+.princesa-page .story h3{
+
+    color:#d4af37;
+
+    letter-spacing:8px;
+
+}
+
+
+
+
+
+.princesa-page .story p{
+
+    color:#d4d4d4;
+
+}
+
+
+
+
+
+/* ==========================
+PRODUCT
+========================== */
+
+
+.princesa-page .collectionNumber{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+.princesa-page .officialText{
+
+    color:#d4af37;
+
+    letter-spacing:5px;
+
+}
+
+
+
+
+
+.princesa-page .productImage img{
+
+    filter:
+
+    drop-shadow(
+    0 20px 45px rgba(212,175,55,.18)
+    );
+
+}
+
+
+
+
+
+.princesa-page .productImage img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+
+
+
+/* ==========================
+DETAILS
+========================== */
+
+
+.princesa-page .details h3{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+.princesa-page .detailCard{
+
+    border:
+
+    1px solid rgba(212,175,55,.15);
+
+}
+
+
+
+
+
+.princesa-page .detailCard:hover{
+
+    border-color:#d4af37;
+
+    transform:translateY(-6px);
+
+}
+
+
+
+
+
+.princesa-page .detailCard span{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+/* ==========================
+GALLERY
+========================== */
+
+
+.princesa-page .galleryItem{
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+
+
+
+
+.princesa-page .galleryItem img{
+
+    transition:.5s;
+
+}
+
+
+
+
+
+.princesa-page .galleryItem img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/* ==========================
+BUY
+========================== */
+
+
+.princesa-page .seriesBadge{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+.princesa-page .buy h2{
+
+    color:#fff;
+
+}
+
+
+
+
+
+.princesa-page .enterButton{
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+
+.princesa-page .enterButton:hover{
+
+    background:#d4af37;
+
+    color:#000;
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.35);
+
+}
+
+
+
+
+
+/* ==========================
+EXPERIENCE
+========================== */
+
+
+.princesa-page .experienceCard{
+
+    border:
+
+    1px solid rgba(212,175,55,.15);
+
+}
+
+
+
+
+
+.princesa-page .experienceCard:hover{
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+
+.princesa-page .experienceCard h2{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+/* ==========================
+FOOTER
+========================== */
+
+
+.princesa-page footer{
+
+    border-top:
+
+    1px solid rgba(212,175,55,.15);
+
+}
+
+
+
+
+
+.princesa-page footer p{
+
+    color:#a0a0a0;
+
+}
+
+
+
+
+
+/* ==========================
+MOBILE
+========================== */
+
+
+@media(max-width:900px){
+
+
+.princesa-page h1{
+
+    letter-spacing:5px;
+
+}
+
+
+
+}
