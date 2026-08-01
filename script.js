@@ -1,372 +1,704 @@
 /*==================================================
-    SWEETPAIN ENGINE V5
-    Developed for SweetPain
+
+    SWEETPAIN ENGINE V6
+    FINAL VERSION
+
+    Pain Creates Legends
+
 ==================================================*/
+
 
 "use strict";
 
+
 const SweetPain = {
+
+
+/*==================================================
+INIT
+==================================================*/
+
 
 init(){
 
+
     this.cache();
+
 
     this.pageInfo();
 
+
     this.loader();
+
 
     this.smoothScroll();
 
+
     this.revealSections();
+
 
     this.lightbox();
 
+
     this.pageTransitions();
+
 
     this.whatsapp();
 
+
     this.preloadImages();
 
-    this.observeDOM();
 
     this.errorHandler();
 
+
+
 },
 
-    //------------------------------------------------
-    // CACHE
-    //------------------------------------------------
 
-    cache(){
-        //------------------------------------------------
-// PAGE INFO
-//------------------------------------------------
+
+
+
+/*==================================================
+CACHE
+==================================================*/
+
+
+cache(){
+
+
+    this.body = document.body;
+
+
+    this.loaderElement =
+    document.getElementById("loader");
+
+
+    this.transition =
+    document.getElementById("transition");
+
+
+    this.lightboxElement =
+    document.getElementById("lightbox");
+
+
+    this.lightboxImage =
+    document.getElementById("lightboxImage");
+
+
+    this.closeLightbox =
+    document.getElementById("closeLightbox");
+
+
+},
+
+
+
+
+
+/*==================================================
+PAGE INFO
+==================================================*/
+
 
 pageInfo(){
 
-    const pages={
 
-        "pantheon-page":{
+const pages={
 
-            name:"THE PANTHEON"
 
-        },
+    "pantheon-page":
 
-        "bushido-page":{
+    "THE PANTHEON",
 
-            name:"BUSHIDO"
 
-        },
 
-        "legends-page":{
+    "bushido-page":
 
-            name:"LEGENDS"
+    "BUSHIDO",
 
-        },
 
-        "essence-page":{
 
-            name:"ESSENCE"
+    "legends-page":
 
-        },
+    "LEGENDS",
 
-        "alfa-page":{
 
-            name:"SIGNATURE SERIES ALFA"
 
-        },
+    "essence-page":
 
-        "goldengirl-page":{
+    "ESSENCE",
 
-            name:"SIGNATURE SERIES GOLDEN GIRL"
 
-        }
 
-    };
+    "goldengirl-page":
 
-    for(const page in pages){
+    "SIGNATURE SERIES GOLDEN GIRL",
 
-        if(this.body.classList.contains(page)){
 
-            this.currentPage=pages[page];
 
-            return;
+    "alfa-page":
 
-        }
+    "SIGNATURE SERIES ALFA",
+
+
+
+    "cosmico-page":
+
+    "SIGNATURE SERIES CÓSMICO",
+
+
+
+    "prince-page":
+
+    "SIGNATURE SERIES PRINCE MAGIC",
+
+
+
+    "valentine-page":
+
+    "SIGNATURE SERIES VALENTÍNE",
+
+
+
+    "milkhouse-page":
+
+    "SIGNATURE SERIES MILKHOUSE"
+
+
+
+};
+
+
+
+this.currentPage = {
+
+
+name:"SWEETPAIN"
+
+
+};
+
+
+
+for(const page in pages){
+
+
+    if(
+        this.body.classList.contains(page)
+    ){
+
+
+        this.currentPage.name =
+        pages[page];
+
+
+        break;
+
 
     }
 
-    this.currentPage={
 
-        name:"SWEETPAIN"
+}
 
-    };
 
 },
 
-        this.body = document.body;
 
-        this.loaderElement = document.getElementById("loader");
 
-        this.transition = document.getElementById("transition");
 
-        this.lightbox = document.getElementById("lightbox");
 
-        this.lightboxImage = document.getElementById("lightboxImage");
+/*==================================================
+LOADER
+==================================================*/
 
-        this.closeLightbox = document.getElementById("closeLightbox");
-
-    },
-
-//------------------------------------------------
-// LOADER
-//------------------------------------------------
 
 loader(){
 
-    const finishLoading=()=>{
 
-        if(this.loaderElement){
+const finish=()=>{
 
-            this.loaderElement.classList.add("hide");
 
-        }
+    if(this.loaderElement){
 
-        if(this.body){
 
-            this.body.classList.add("loaded");
+        this.loaderElement.classList.add("hide");
 
-        }
-
-    };
-
-    window.addEventListener("load",()=>{
-
-        setTimeout(finishLoading,500);
-
-    });
-
-    setTimeout(finishLoading,3000);
-
-},
-
-    //------------------------------------------------
-    // SMOOTH SCROLL
-    //------------------------------------------------
-
-    smoothScroll(){
-
-        document.querySelectorAll('a[href^="#"]').forEach(link=>{
-
-            link.addEventListener("click",(e)=>{
-
-                const target=document.querySelector(link.getAttribute("href"));
-
-                if(!target) return;
-
-                e.preventDefault();
-
-                target.scrollIntoView({
-
-                    behavior:"smooth"
-
-                });
-
-            });
-
-        });
-
-    },
-
-    //------------------------------------------------
-    // REVEAL
-    //------------------------------------------------
-
-    revealSections(){
-
-        if(!("IntersectionObserver" in window)) return;
-
-        const observer=new IntersectionObserver((entries)=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("show");
-
-                }
-
-            });
-
-        },{
-
-            threshold:.15
-
-        });
-
-        document.querySelectorAll("section").forEach(section=>{
-
-            section.classList.add("hidden");
-
-            observer.observe(section);
-
-        });
-
-    },
-
-//------------------------------------------------
-// LIGHTBOX V2
-//------------------------------------------------
-
-lightbox(){
-
-    if(!this.lightbox || !this.lightboxImage) return;
-
-    const images=document.querySelectorAll("img");
-
-    if(images.length===0) return;
-
-    images.forEach(img=>{
-
-        if(
-            img.closest("#lightbox") ||
-            img.hasAttribute("data-no-lightbox")
-        ){
-            return;
-        }
-
-        img.style.cursor="zoom-in";
-
-        img.addEventListener("click",()=>{
-
-            this.lightbox.style.display="flex";
-
-            this.lightboxImage.src=img.currentSrc || img.src;
-
-            this.lightboxImage.alt=img.alt || "";
-
-            document.body.style.overflow="hidden";
-
-        });
-
-    });
-
-    const close=()=>{
-
-        this.lightbox.style.display="none";
-
-        document.body.style.overflow="";
-
-    };
-
-    if(this.closeLightbox){
-
-        this.closeLightbox.onclick=close;
 
     }
 
-    this.lightbox.addEventListener("click",(e)=>{
 
-        if(e.target===this.lightbox){
+    this.body.classList.add("loaded");
 
-            close();
 
-        }
+};
 
-    });
 
-    document.addEventListener("keydown",(e)=>{
 
-        if(e.key==="Escape"){
+window.addEventListener(
+"load",
+()=>{
 
-            close();
 
-        }
+    setTimeout(
+        finish,
+        500
+    );
 
-    });
+
+});
+
+
+setTimeout(
+finish,
+3500
+);
+
+
 
 },
 
-    //------------------------------------------------
-// PAGE TRANSITIONS
-//------------------------------------------------
+
+
+
+
+/*==================================================
+SMOOTH SCROLL
+==================================================*/
+
+
+smoothScroll(){
+
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(link=>{
+
+
+link.addEventListener(
+"click",
+e=>{
+
+
+const target =
+document.querySelector(
+link.getAttribute("href")
+);
+
+
+
+if(!target)return;
+
+
+
+e.preventDefault();
+
+
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+
+});
+
+
+});
+
+
+},
+
+
+
+
+
+/*==================================================
+REVEAL
+==================================================*/
+
+
+revealSections(){
+
+
+if(
+!"IntersectionObserver" in window
+)return;
+
+
+
+const observer =
+new IntersectionObserver(
+entries=>{
+
+
+entries.forEach(
+entry=>{
+
+
+if(
+entry.isIntersecting
+){
+
+
+entry.target.classList.add(
+"show"
+);
+
+
+
+}
+
+
+});
+
+
+},
+{
+
+
+threshold:.15
+
+
+});
+
+
+
+document
+.querySelectorAll(
+"section, .card, .signature, .experienceCard"
+)
+.forEach(element=>{
+
+
+element.classList.add(
+"hidden"
+);
+
+
+
+observer.observe(
+element
+);
+
+
+
+});
+
+
+},
+    /*==================================================
+LIGHTBOX
+==================================================*/
+
+
+lightbox(){
+
+
+if(
+!this.lightboxElement ||
+!this.lightboxImage
+)return;
+
+
+
+const images =
+document.querySelectorAll(
+"img"
+);
+
+
+
+images.forEach(img=>{
+
+
+if(
+img.closest("#lightbox") ||
+img.dataset.noLightbox
+)return;
+
+
+
+img.style.cursor="zoom-in";
+
+
+
+img.onclick=()=>{
+
+
+this.lightboxElement.classList.add(
+"show"
+);
+
+
+
+this.lightboxImage.src =
+img.currentSrc || img.src;
+
+
+
+this.lightboxImage.alt =
+img.alt || "";
+
+
+
+document.body.style.overflow="hidden";
+
+
+
+};
+
+
+
+});
+
+
+
+const close=()=>{
+
+
+this.lightboxElement.classList.remove(
+"show"
+);
+
+
+
+document.body.style.overflow="";
+
+
+
+};
+
+
+
+if(this.closeLightbox){
+
+
+this.closeLightbox.onclick =
+close;
+
+
+}
+
+
+
+this.lightboxElement.onclick=e=>{
+
+
+if(
+e.target === this.lightboxElement
+){
+
+
+close();
+
+
+}
+
+
+};
+
+
+
+document.addEventListener(
+"keydown",
+e=>{
+
+
+if(
+e.key==="Escape"
+){
+
+
+close();
+
+
+}
+
+
+});
+
+
+},
+
+
+
+
+
+/*==================================================
+PAGE TRANSITIONS
+==================================================*/
+
 
 pageTransitions(){
 
-    if(!this.transition) return;
 
-    window.addEventListener("load",()=>{
+if(!this.transition)
+return;
 
-        requestAnimationFrame(()=>{
 
-            this.transition.classList.add("hide");
 
-        });
+window.addEventListener(
+"load",
+()=>{
 
-    });
 
-    document.querySelectorAll("a").forEach(link=>{
+setTimeout(()=>{
 
-        const href=link.getAttribute("href");
 
-        if(
-            !href ||
-            href.startsWith("#") ||
-            href.startsWith("http") ||
-            href.startsWith("https") ||
-            href.startsWith("mailto") ||
-            href.startsWith("tel")
-        ){
-            return;
-        }
+this.transition.classList.add(
+"hide"
+);
 
-        link.addEventListener("click",(e)=>{
 
-            e.preventDefault();
 
-            this.transition.classList.remove("hide");
+},400);
 
-            setTimeout(()=>{
 
-                window.location.href=href;
 
-            },400);
+});
 
-        });
 
-    });
+
+document
+.querySelectorAll("a")
+.forEach(link=>{
+
+
+const href =
+link.getAttribute("href");
+
+
+
+if(
+!href ||
+href.startsWith("#") ||
+href.startsWith("http") ||
+href.startsWith("mailto") ||
+href.startsWith("tel")
+)
+return;
+
+
+
+link.addEventListener(
+"click",
+e=>{
+
+
+e.preventDefault();
+
+
+
+this.transition.classList.remove(
+"hide"
+);
+
+
+
+setTimeout(
+()=>{
+
+
+window.location.href =
+href;
+
+
+
+},
+450
+);
+
+
+
+});
+
+
+});
+
 
 },
 
-    //------------------------------------------------
-// WHATSAPP
-//------------------------------------------------
+
+
+
+
+/*==================================================
+WHATSAPP PREORDER
+==================================================*/
+
 
 whatsapp(){
 
-    const button=document.getElementById("preorderButton");
 
-    if(!button) return;
+const button =
+document.getElementById(
+"preorderButton"
+);
 
-    button.addEventListener("click",(e)=>{
 
-        e.preventDefault();
 
-        const title=document.getElementById("buyTitle")?.textContent.trim() ||
+if(!button)
+return;
 
-                    this.currentPage.name;
 
-        const code=document.getElementById("seriesCode")?.textContent.trim() ||
 
-                   document.getElementById("collectionCode")?.textContent.trim() ||
+button.addEventListener(
+"click",
+e=>{
 
-                   "";
 
-        const price=document.getElementById("productPrice")?.textContent.trim() ||
+e.preventDefault();
 
-                    "";
 
-        const message=
+
+const title =
+
+document.getElementById(
+"buyTitle"
+)?.textContent.trim()
+
+||
+
+this.currentPage.name;
+
+
+
+const code =
+
+document.getElementById(
+"seriesCode"
+)?.textContent.trim()
+
+||
+
+document.getElementById(
+"collectionCode"
+)?.textContent.trim()
+
+||
+
+"";
+
+
+
+const price =
+
+document.getElementById(
+"productPrice"
+)?.textContent.trim()
+
+||
+
+"";
+
+
+
+
+
+const message =
 
 `Hola SweetPain.
 
@@ -382,84 +714,111 @@ Talla:
 
 Nombre:`;
 
-        window.open(
 
-            "https://wa.me/5665897458?text="+
-            encodeURIComponent(message),
 
-            "_blank"
 
-        );
 
-    });
+window.open(
 
-},v
+"https://wa.me/525665897458?text="
++
+encodeURIComponent(message),
 
-document.addEventListener("DOMContentLoaded",()=>{
+"_blank"
 
-    SweetPain.init();
+);
+
+
 
 });
-//------------------------------------------------
-// PRELOAD IMAGES
-//------------------------------------------------
+
+
+},
+
+
+
+
+
+/*==================================================
+PRELOAD IMAGES
+==================================================*/
+
 
 preloadImages(){
 
-    const images=document.querySelectorAll("img");
 
-    images.forEach(img=>{
+document
+.querySelectorAll("img")
+.forEach(img=>{
 
-        if(!img.src) return;
 
-        const preload=new Image();
+const preload =
+new Image();
 
-        preload.src=img.src;
 
-    });
 
-},
+preload.src =
+img.src;
 
-//------------------------------------------------
-// OBSERVE DOM
-//------------------------------------------------
 
-observeDOM(){
 
-    if(!("MutationObserver" in window)) return;
+});
 
-    const observer=new MutationObserver(()=>{
-
-        this.lightbox();
-
-    });
-
-    observer.observe(document.body,{
-
-        childList:true,
-
-        subtree:true
-
-    });
 
 },
 
-//------------------------------------------------
-// ERROR HANDLER
-//------------------------------------------------
+
+
+
+
+/*==================================================
+ERROR HANDLER
+==================================================*/
+
 
 errorHandler(){
 
-    window.addEventListener("error",(e)=>{
 
-        console.error(
+window.addEventListener(
+"error",
+e=>{
 
-            "[SweetPain Engine]",
 
-            e.message
+console.error(
 
-        );
+"[SWEETPAIN ENGINE]",
 
-    });
+e.message
+
+);
+
+
+
+});
+
 
 }
+
+
+
+};
+
+
+
+
+
+/*==================================================
+START ENGINE
+==================================================*/
+
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+
+SweetPain.init();
+
+
+
+});
