@@ -3466,3 +3466,18 @@ MOBILE
 
 
 }
+/* ==========================================
+   SIGNATURE SERIES CARDS UNIFORM SIZE
+========================================== */
+
+.signatureCard{
+
+    min-height:320px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
