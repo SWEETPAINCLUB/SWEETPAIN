@@ -1286,7 +1286,8 @@ Nombre:`;
 
         window.open(
 
-            "https://wa.me/TUNUMERO?text="+encodeURIComponent(message),
+            "https://wa.me/525665897458?text="+
+            encodeURIComponent(message),
 
             "_blank"
 
