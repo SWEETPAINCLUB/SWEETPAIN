@@ -1289,9 +1289,7 @@ Nombre:`;
             "https://wa.me/525665897458?text="+
             encodeURIComponent(message),
 
-            "_blank"
-
-        );
+            },1500);
 
     });
 
