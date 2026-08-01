@@ -2928,3 +2928,138 @@ transition:.35s;
     border-top:1px solid rgba(255,255,255,.08);
 
 }
+/* ==========================================
+   GOLDEN GIRL SIGNATURE SERIES
+========================================== */
+
+.goldengirl-page .signatureHero{
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.82)),
+    url("goldengirlpresentacion.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+}
+
+.goldengirl-page .seriesTitle{
+
+    color:#d4af37;
+    letter-spacing:8px;
+    text-transform:uppercase;
+
+}
+
+.goldengirl-page h1{
+
+    color:#ffffff;
+    letter-spacing:4px;
+
+}
+
+.goldengirl-page .heroDescription{
+
+    max-width:720px;
+    color:#d9d9d9;
+    line-height:1.9;
+
+}
+
+.goldengirl-page .officialText{
+
+    color:#d4af37;
+
+}
+
+.goldengirl-page .collectionNumber{
+
+    color:#d4af37;
+
+}
+
+.goldengirl-page .collectionCard.active{
+
+    border:1px solid rgba(212,175,55,.45);
+
+}
+
+.goldengirl-page .galleryItem img{
+
+    transition:.35s ease;
+    cursor:pointer;
+
+}
+
+.goldengirl-page .galleryItem img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.goldengirl-page .detailCard{
+
+    transition:.35s ease;
+    border:1px solid rgba(212,175,55,.15);
+
+}
+
+.goldengirl-page .detailCard:hover{
+
+    transform:translateY(-5px);
+    border-color:#d4af37;
+
+}
+
+.goldengirl-page .experienceCard{
+
+    transition:.35s ease;
+    border:1px solid rgba(212,175,55,.15);
+
+}
+
+.goldengirl-page .experienceCard:hover{
+
+    transform:translateY(-5px);
+    border-color:#d4af37;
+
+}
+
+.goldengirl-page .spec span{
+
+    color:#d4af37;
+
+}
+
+.goldengirl-page .enterButton{
+
+    transition:.35s ease;
+
+}
+
+.goldengirl-page .enterButton:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(212,175,55,.35);
+
+}
+
+.goldengirl-page footer{
+
+    border-top:1px solid rgba(212,175,55,.15);
+
+}
+
+.goldengirl-page .madeOnDemand{
+
+    color:#d4af37;
+    opacity:.9;
+
+}
+
+.goldengirl-page .gallerySubtitle{
+
+    color:#bfbfbf;
+
+}
