@@ -1,12 +1,7 @@
 /*==================================================
-
     SWEETPAIN ENGINE V6
-    FINAL VERSION
-
-    Pain Creates Legends
-
+    Premium Streetwear Archive System
 ==================================================*/
-
 
 "use strict";
 
@@ -14,48 +9,36 @@
 const SweetPain = {
 
 
-/*==================================================
-INIT
-==================================================*/
+    currentPage:{
+        name:"SWEETPAIN"
+    },
 
 
-init(){
+    init(){
 
 
-    this.cache();
+        this.cache();
+
+        this.pageInfo();
+
+        this.loader();
+
+        this.smoothScroll();
+
+        this.revealSections();
+
+        this.lightbox();
+
+        this.pageTransitions();
+
+        this.whatsapp();
+
+        this.preloadImages();
+
+        this.errorHandler();
 
 
-    this.pageInfo();
-
-
-    this.loader();
-
-
-    this.smoothScroll();
-
-
-    this.revealSections();
-
-
-    this.lightbox();
-
-
-    this.pageTransitions();
-
-
-    this.whatsapp();
-
-
-    this.preloadImages();
-
-
-    this.errorHandler();
-
-
-
-},
-
-
+    },
 
 
 
@@ -67,26 +50,26 @@ CACHE
 cache(){
 
 
-    this.body = document.body;
+    this.body=document.body;
 
 
-    this.loaderElement =
+    this.loaderElement=
     document.getElementById("loader");
 
 
-    this.transition =
+    this.transition=
     document.getElementById("transition");
 
 
-    this.lightboxElement =
+    this.lightboxElement=
     document.getElementById("lightbox");
 
 
-    this.lightboxImage =
+    this.lightboxImage=
     document.getElementById("lightboxImage");
 
 
-    this.closeLightbox =
+    this.closeLightbox=
     document.getElementById("closeLightbox");
 
 
@@ -107,74 +90,54 @@ pageInfo(){
 const pages={
 
 
-    "pantheon-page":
-
-    "THE PANTHEON",
-
-
-
-    "bushido-page":
-
-    "BUSHIDO",
+    "pantheon-page":{
+        name:"THE PANTHEON"
+    },
 
 
-
-    "legends-page":
-
-    "LEGENDS",
-
+    "bushido-page":{
+        name:"BUSHIDO"
+    },
 
 
-    "essence-page":
-
-    "ESSENCE",
-
-
-
-    "goldengirl-page":
-
-    "SIGNATURE SERIES GOLDEN GIRL",
+    "legends-page":{
+        name:"LEGENDS"
+    },
 
 
-
-    "alfa-page":
-
-    "SIGNATURE SERIES ALFA",
-
+    "goldengirl-page":{
+        name:"GOLDEN GIRL"
+    },
 
 
-    "cosmico-page":
-
-    "SIGNATURE SERIES CÓSMICO",
-
-
-
-    "prince-page":
-
-    "SIGNATURE SERIES PRINCE MAGIC",
+    "alfa-page":{
+        name:"ALFA"
+    },
 
 
-
-    "valentine-page":
-
-    "SIGNATURE SERIES VALENTÍNE",
-
+    "cosmico-page":{
+        name:"CÓSMICO"
+    },
 
 
-    "milkhouse-page":
-
-    "SIGNATURE SERIES MILKHOUSE"
-
-
-
-};
+    "prince-page":{
+        name:"PRINCE MAGIC"
+    },
 
 
+    "valentine-page":{
+        name:"VALENTÍNE"
+    },
 
-this.currentPage = {
+
+    "milkhouse-page":{
+        name:"I'M NOT NERD I'M BULKING"
+    },
 
 
-name:"SWEETPAIN"
+    "essence-page":{
+        name:"ESSENCE"
+    }
 
 
 };
@@ -188,18 +151,15 @@ for(const page in pages){
         this.body.classList.contains(page)
     ){
 
-
-        this.currentPage.name =
-        pages[page];
-
+        this.currentPage=pages[page];
 
         break;
-
 
     }
 
 
 }
+
 
 
 },
@@ -216,19 +176,24 @@ LOADER
 loader(){
 
 
-const finish=()=>{
+const removeLoader=()=>{
 
 
-    if(this.loaderElement){
+    if(
+        this.loaderElement
+    ){
 
-
-        this.loaderElement.classList.add("hide");
-
+        this.loaderElement.classList.add(
+            "hide"
+        );
 
     }
 
 
-    this.body.classList.add("loaded");
+
+    this.body.classList.add(
+        "loaded"
+    );
 
 
 };
@@ -241,17 +206,20 @@ window.addEventListener(
 
 
     setTimeout(
-        finish,
-        500
+        removeLoader,
+        600
     );
 
 
 });
 
 
+
+// seguridad
+
 setTimeout(
-finish,
-3500
+removeLoader,
+4000
 );
 
 
@@ -271,7 +239,9 @@ smoothScroll(){
 
 
 document
-.querySelectorAll('a[href^="#"]')
+.querySelectorAll(
+'a[href^="#"]'
+)
 .forEach(link=>{
 
 
@@ -280,14 +250,15 @@ link.addEventListener(
 e=>{
 
 
-const target =
+const target=
 document.querySelector(
 link.getAttribute("href")
 );
 
 
 
-if(!target)return;
+if(!target)
+return;
 
 
 
@@ -324,12 +295,13 @@ revealSections(){
 
 
 if(
-!"IntersectionObserver" in window
-)return;
+!("IntersectionObserver" in window)
+)
+return;
 
 
 
-const observer =
+const observer=
 new IntersectionObserver(
 entries=>{
 
@@ -348,7 +320,6 @@ entry.target.classList.add(
 );
 
 
-
 }
 
 
@@ -357,39 +328,40 @@ entry.target.classList.add(
 
 },
 {
-
-
 threshold:.15
-
-
-});
+}
+);
 
 
 
 document
 .querySelectorAll(
-"section, .card, .signature, .experienceCard"
+"section"
 )
-.forEach(element=>{
+.forEach(section=>{
 
 
-element.classList.add(
+section.classList.add(
 "hidden"
 );
 
 
-
 observer.observe(
-element
+section
 );
-
 
 
 });
 
 
+
 },
-    /*==================================================
+
+
+
+
+
+/*==================================================
 LIGHTBOX
 ==================================================*/
 
@@ -400,32 +372,28 @@ lightbox(){
 if(
 !this.lightboxElement ||
 !this.lightboxImage
-)return;
+)
+return;
 
 
 
-const images =
-document.querySelectorAll(
+document
+.querySelectorAll(
 "img"
-);
-
-
-
-images.forEach(img=>{
+)
+.forEach(img=>{
 
 
 if(
-img.closest("#lightbox") ||
-img.dataset.noLightbox
-)return;
+img.closest("#lightbox")
+)
+return;
 
 
 
-img.style.cursor="zoom-in";
-
-
-
-img.onclick=()=>{
+img.addEventListener(
+"click",
+()=>{
 
 
 this.lightboxElement.classList.add(
@@ -434,25 +402,21 @@ this.lightboxElement.classList.add(
 
 
 
-this.lightboxImage.src =
-img.currentSrc || img.src;
+this.lightboxImage.src=
+img.src;
 
 
 
-this.lightboxImage.alt =
-img.alt || "";
-
-
-
-document.body.style.overflow="hidden";
-
-
-
-};
+document.body.style.overflow=
+"hidden";
 
 
 
 });
+
+
+});
+
 
 
 
@@ -464,36 +428,33 @@ this.lightboxElement.classList.remove(
 );
 
 
-
 document.body.style.overflow="";
-
 
 
 };
 
 
 
-if(this.closeLightbox){
+if(
+this.closeLightbox
+){
 
-
-this.closeLightbox.onclick =
+this.closeLightbox.onclick=
 close;
-
 
 }
 
 
 
-this.lightboxElement.onclick=e=>{
+this.lightboxElement.onclick=
+e=>{
 
 
 if(
-e.target === this.lightboxElement
+e.target===this.lightboxElement
 ){
 
-
 close();
-
 
 }
 
@@ -511,9 +472,7 @@ if(
 e.key==="Escape"
 ){
 
-
 close();
-
 
 }
 
@@ -535,40 +494,24 @@ PAGE TRANSITIONS
 pageTransitions(){
 
 
-if(!this.transition)
+if(
+!this.transition
+)
 return;
 
 
 
-window.addEventListener(
-"load",
-()=>{
-
-
-setTimeout(()=>{
-
-
-this.transition.classList.add(
-"hide"
-);
-
-
-
-},400);
-
-
-
-});
-
-
-
 document
-.querySelectorAll("a")
+.querySelectorAll(
+"a"
+)
 .forEach(link=>{
 
 
-const href =
-link.getAttribute("href");
+const href=
+link.getAttribute(
+"href"
+);
 
 
 
@@ -602,7 +545,7 @@ setTimeout(
 ()=>{
 
 
-window.location.href =
+window.location.href=
 href;
 
 
@@ -619,6 +562,7 @@ href;
 });
 
 
+
 },
 
 
@@ -633,7 +577,7 @@ WHATSAPP PREORDER
 whatsapp(){
 
 
-const button =
+const button=
 document.getElementById(
 "preorderButton"
 );
@@ -654,51 +598,39 @@ e.preventDefault();
 
 
 
-const title =
-
+const title=
 document.getElementById(
 "buyTitle"
 )?.textContent.trim()
-
 ||
-
 this.currentPage.name;
 
 
 
-const code =
-
+const code=
 document.getElementById(
 "seriesCode"
 )?.textContent.trim()
-
 ||
-
 document.getElementById(
 "collectionCode"
 )?.textContent.trim()
-
 ||
-
 "";
 
 
 
-const price =
-
+const price=
 document.getElementById(
 "productPrice"
 )?.textContent.trim()
-
 ||
-
 "";
 
 
 
 
-
-const message =
+const message=
 
 `Hola SweetPain.
 
@@ -717,11 +649,9 @@ Nombre:`;
 
 
 
-
 window.open(
 
-"https://wa.me/525665897458?text="
-+
+"https://wa.me/525665897458?text="+
 encodeURIComponent(message),
 
 "_blank"
@@ -740,7 +670,7 @@ encodeURIComponent(message),
 
 
 /*==================================================
-PRELOAD IMAGES
+PRELOAD
 ==================================================*/
 
 
@@ -748,16 +678,17 @@ preloadImages(){
 
 
 document
-.querySelectorAll("img")
+.querySelectorAll(
+"img"
+)
 .forEach(img=>{
 
 
-const preload =
+const image=
 new Image();
 
 
-
-preload.src =
+image.src=
 img.src;
 
 
@@ -779,22 +710,21 @@ ERROR HANDLER
 errorHandler(){
 
 
-window.addEventListener(
-"error",
-e=>{
+window.onerror=
+function(
+message
+){
 
 
 console.error(
-
 "[SWEETPAIN ENGINE]",
-
-e.message
-
+message
 );
 
 
 
-});
+};
+
 
 
 }
@@ -818,7 +748,6 @@ document.addEventListener(
 
 
 SweetPain.init();
-
 
 
 });
